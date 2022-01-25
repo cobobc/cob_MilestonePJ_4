@@ -17,7 +17,7 @@ class Beat(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    file = models.FileField(upload_to='media/audio/')
+    file = models.FileField(upload_to='media/', null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
