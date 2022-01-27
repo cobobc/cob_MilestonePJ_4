@@ -17,10 +17,12 @@
                 Beat Genres
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="genre-link">
-                <a href="" class="dropdown-item">Rock</a>
-                <a href="" class="dropdown-item">Disco</a>
-                <a href="" class="dropdown-item">Electro</a>
-                <a href="" class="dropdown-item">Funk</a>
+                <a href="{% url 'beats' %}?genre=dance" class="dropdown-item">Dance</a>
+                <a href="{% url 'beats' %}?genre=hip_hop" class="dropdown-item">Hip Hop</a>
+                <a href="{% url 'beats' %}?genre=pop" class="dropdown-item">Pop</a>
+                <a href="{% url 'beats' %}?genre=rnb" class="dropdown-item">RnB</a>
+                <a href="{% url 'beats' %}?genre=piano_instrumentals" class="dropdown-item">Piano Instrumental</a>
+                <a href="{% url 'beats' %}?genre=dance,hip_hop,pop,rnb,piano_instrumentals" class="dropdown-item">All Beats</a>
             </div>
         </li>
 

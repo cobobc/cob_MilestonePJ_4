@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Beat
+from .models import Beat, Genre
 
 # Create your views here.
 
@@ -10,6 +10,13 @@ def all_beats(request):
 
     beats = Beat.objects.all()
     query = None
+    genres = None
+
+    if request.GET:
+        if 'genre' in request.GET:
+            genres = request.GET['genre'].split(',')
+            beats = beats.filter(genre__name__in=genres)
+            genres = Genre.objects.filter(name__in=genres)
 
     if request.GET:
         if 'q' in request.GET:
@@ -24,6 +31,7 @@ def all_beats(request):
     context = {
         'beats': beats,
         'search_term': query,
+        'current_genres': genres,
     }
 
     return render(request, 'beats/beats.html', context)
