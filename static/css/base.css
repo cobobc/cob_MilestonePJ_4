@@ -93,7 +93,9 @@ a.genre-badge > span.badge:hover {
     z-index: 1;
 }
 
-.btt-link {
+.btt-link,
+.update-link,
+.remove-item {
     cursor: pointer;
 }
 
