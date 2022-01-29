@@ -11,6 +11,22 @@ def all_beats(request):
     beats = Beat.objects.all()
     query = None
     genres = None
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                beats = beats.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            beats = beats.order_by(sortkey)
 
     if request.GET:
         if 'genre' in request.GET:
@@ -27,6 +43,8 @@ def all_beats(request):
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             beats = beats.filter(queries)
+
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'beats': beats,

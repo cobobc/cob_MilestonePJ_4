@@ -5,9 +5,8 @@
                 All Beats
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-beats-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Genre</a>
+                <a href="{% url 'beats' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'beats' %}?sort=genre&direction=desc" class="dropdown-item ">By Genre</a>
                 <a href="{% url 'beats' %}" class="dropdown-item">All Beats</a>
             </div>
         </li>
