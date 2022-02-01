@@ -50,7 +50,7 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
-    $('#submit-button').attr('disabled', true);
+    $('#loading-overlay').fadeToggle(100);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
