@@ -5,6 +5,13 @@ from django.dispatch import receiver
 
 
 class UserProfile(models.Model):
+    """
+    A user profile model for maintaining default
+    user information and order history
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    full_name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.EmailField(max_length=254, null=False, blank=False)
 
     def __str__(self):
         return self.user.username
