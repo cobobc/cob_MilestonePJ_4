@@ -79,10 +79,15 @@
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
                         <div class="form-check form-check-inline float-right mr-0">
-                            <label class="form-check-label" for="id-save-info">
-                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                            </label>
+                            {% if user.is_authenticated %}
+								<label class="form-check-label" for="id-save-info">Save this information to my profile</label>
+                                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+							{% else %}
+								<label class="form-check-label" for="id-save-info">
+                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                                </label>
+							{% endif %}
 						</div>
                     </fieldset>
                     <fieldset class="px-3">
