@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-4*%_g4vvr2u2%by#yd5^*a9lcktc$50u1c*ck_e+ljd_+n=t*5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cob-milestonepj-4.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -120,12 +120,17 @@ WSGI_APPLICATION = 'fob_beats.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation

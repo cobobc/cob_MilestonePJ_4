@@ -1,0 +1,1 @@
+web: gunicorn fob_beats.wsgi:application
