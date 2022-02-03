@@ -120,15 +120,11 @@ WSGI_APPLICATION = 'fob_beats.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-    #'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-#}
-
 DATABASES = {
-    'default': dj_database_url.parse('postgres://shatxmeaurkksj:41b9478e07e42fb3f9a81fc5bab55eb5a5ad7ee0a54b3fefe4bfb0e53b63b292@ec2-54-220-223-3.eu-west-1.compute.amazonaws.com:5432/d5mcjst66r406r')
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 

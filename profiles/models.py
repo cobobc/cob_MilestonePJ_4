@@ -10,8 +10,8 @@ class UserProfile(models.Model):
     user information and order history
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    full_name = models.CharField(max_length=50, null=False, blank=False)
-    email = models.EmailField(max_length=254, null=False, blank=False)
+    full_name = models.CharField(max_length=50, null=True, blank=True)
+    email = models.EmailField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return self.user.username
@@ -24,5 +24,5 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
     if created:
         UserProfile.objects.create(user=instance)
-    # Existing users: just save the profile
-    instance.userprofile.save()
+        # Existing users: just save the profile
+        instance.userprofile.save()
