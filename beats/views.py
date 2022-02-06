@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Beat, Genre
+from .forms import BeatForm
 
 # Create your views here.
 
@@ -68,3 +69,14 @@ def beat_detail(request, beat_id):
     }
 
     return render(request, 'beats/beat_detail.html', context)
+
+
+def add_beat(request):
+    """ Add a product to the store """
+    form = BeatForm()
+    template = 'beats/add_beat.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

@@ -2,7 +2,7 @@ from django import forms
 from .models import Beat, Genre
 
 
-class ProductForm(forms.ModelForm):
+class BeatForm(forms.ModelForm):
 
     class Meta:
         model = Beat
