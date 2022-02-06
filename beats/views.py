@@ -76,9 +76,9 @@ def add_beat(request):
     if request.method == 'POST':
         form = BeatForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            beat = form.save()
             messages.success(request, 'Successfully added beat!')
-            return redirect(reverse('add_beat'))
+            return redirect(reverse(''beat_detail', args=[beat.id]))
         else:
             messages.error(request, 'Failed to add beat. Please ensure the form is valid.')
     else:
@@ -114,3 +114,11 @@ def edit_beat(request, beat_id):
     }
 
     return render(request, template, context)
+
+
+def delete_beat(request, beat_id):
+    """ Delete a beat from the store """
+    beat = get_object_or_404(Beat, pk=beat_id)
+    beat.delete()
+    messages.success(request, 'Beat deleted!')
+    return redirect(reverse('beats'))
