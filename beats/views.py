@@ -90,3 +90,27 @@ def add_beat(request):
     }
 
     return render(request, template, context)
+
+
+def edit_beat(request, beat_id):
+    """ Edit a beat in the store """
+    beat = get_object_or_404(Beat, pk=beat_id)
+    if request.method == 'POST':
+        form = BeatForm(request.POST, request.FILES, instance=beat)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated beat!')
+            return redirect(reverse('beat_detail', args=[beat.id]))
+        else:
+            messages.error(request, 'Failed to update beat. Please ensure the form is valid.')
+    else:
+        form = BeatForm(instance=beat)
+        messages.info(request, f'You are editing {beat.name}')
+
+    template = 'beats/edit_beat.html'
+    context = {
+        'form': form,
+        'beat': beat,
+    }
+
+    return render(request, template, context)
