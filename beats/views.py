@@ -72,8 +72,18 @@ def beat_detail(request, beat_id):
 
 
 def add_beat(request):
-    """ Add a product to the store """
-    form = BeatForm()
+    """ Add a beat to the store """
+    if request.method == 'POST':
+        form = BeatForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added beat!')
+            return redirect(reverse('add_beat'))
+        else:
+            messages.error(request, 'Failed to add beat. Please ensure the form is valid.')
+    else:
+        form = BeatForm()
+        
     template = 'beats/add_beat.html'
     context = {
         'form': form,
