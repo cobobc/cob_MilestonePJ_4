@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -71,8 +72,13 @@ def beat_detail(request, beat_id):
     return render(request, 'beats/beat_detail.html', context)
 
 
+@login_required
 def add_beat(request):
     """ Add a beat to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = BeatForm(request.POST, request.FILES)
         if form.is_valid():
@@ -92,8 +98,13 @@ def add_beat(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_beat(request, beat_id):
     """ Edit a beat in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     beat = get_object_or_404(Beat, pk=beat_id)
     if request.method == 'POST':
         form = BeatForm(request.POST, request.FILES, instance=beat)
@@ -116,8 +127,13 @@ def edit_beat(request, beat_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_beat(request, beat_id):
     """ Delete a beat from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
     beat = get_object_or_404(Beat, pk=beat_id)
     beat.delete()
     messages.success(request, 'Beat deleted!')
