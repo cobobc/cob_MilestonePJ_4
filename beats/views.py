@@ -84,7 +84,7 @@ def add_beat(request):
         if form.is_valid():
             beat = form.save()
             messages.success(request, 'Successfully added beat!')
-            return redirect(reverse(''beat_detail', args=[beat.id]))
+            return redirect(reverse('beat_detail', args=[beat.id]))
         else:
             messages.error(request, 'Failed to add beat. Please ensure the form is valid.')
     else:
