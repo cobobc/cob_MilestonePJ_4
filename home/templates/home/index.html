@@ -10,11 +10,35 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="container-fluid index-main">
-        <section class="callout jumbotron jumbotron-main text-center">
+        <div class="row h-100">
+            <div class="my-auto">
+                <h1 class="display-4 logo-font index-header">
+                    this is the FOB beat store
+                </h1>
+                <form method="GET" action="{% url 'beats' %}">
+                    <div class="index-search">
+                            <button class="index-icon" type="submit">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </button>
+                            <input class="index-input" type="text" name="q" placeholder="What are you looking for?">
+                            <a class="dropdown-menu" href="{% url 'beats' %}?sort=genre&direction=desc">Genre</a>
+                    </div>
+                </form>
+                <div class="my-3">
+                    <h4>
+                        <a href="{% url 'beats' %}" class="btn btn-info text-uppercase">Shop Now</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <!--
+            <section class="callout jumbotron jumbotron-main text-center">
             <h2 class="main-header d-none d-sm-inline text-uppercase">Beats for sale</h2><br><br>
                 <a href="{% url 'beats' %}" class="btn btn-info">Shop Now</a>
-        </section>
+            </section>
+        -->
     </div>
     <div class="container about-container my-5">
         <section class="about">

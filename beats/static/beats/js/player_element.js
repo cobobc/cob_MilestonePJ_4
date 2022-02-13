@@ -511,6 +511,12 @@ var Controls = {
 };
 'use strict';
 
+var title = document.getElementsByClassName("name")[0]
+            console.log(title)
+
+var beat = document.getElementsByClassName("beat")[0]
+            console.log(beat)
+
 var Player = {
 
     buffer: null,
@@ -520,8 +526,8 @@ var Player = {
     tracks: [
         {
             artist: "FOB",
-            song: "{{ beat.name }}",
-            url: "{{ beat.file.url }}"
+            song: title,
+            url: beat
         }
     ],
 
