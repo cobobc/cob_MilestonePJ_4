@@ -1,1 +1,1 @@
-FOB Beats Confirmation for Order Number {{ order.order_number }}
+FOB Beats Confirmation for Beat Name - {{ beat.name }}

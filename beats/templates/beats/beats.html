@@ -82,8 +82,10 @@
                                     </a>
                                 </p>
                             {% endif %}
+                            {% if request.user.is_order.order_number %}
                                 <a href="{{ beat.file.url }}" download="{{ beat.file.url }}">Download</a>
                                 <button class="btn"><i class="fa fa-download"></i> Download</button>
+                            {% endif %}
                             {% if request.user.is_superuser %}
                                 <small class="ml-3">
                                     <a href="{% url 'edit_beat' beat.id %}">Edit</a> | 
