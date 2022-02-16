@@ -83,7 +83,7 @@ def add_beat(request):
         form = BeatForm(request.POST, request.FILES)
         if form.is_valid():
             beat = form.save()
-            messages.success(request, 'Successfully added beat!')
+            messages.success(request, 'Successfully added a new beat to the store!')
             return redirect(reverse('beat_detail', args=[beat.id]))
         else:
             messages.error(request, 'Failed to add beat. Please ensure the form is valid.')

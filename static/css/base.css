@@ -106,6 +106,19 @@ body {
     margin-bottom: 0;
 }
 
+/*------------------------------------------------------------------------------------------------ beats --*/
+
+.beats-card {
+    display: flex;
+    align-items: center;
+}
+
+.beats-card img {
+    width: 240px;
+    height: 200px;
+    object-fit: cover;
+}
+
 /*------------------------------------------------------------------------------------------------ beat details --*/
 
 /* from Bulma */
