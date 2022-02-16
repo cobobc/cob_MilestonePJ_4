@@ -1,23 +1,13 @@
-<div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item d-block d-md-none">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
-                Home
-            </a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-beats-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Beats
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-beats-link">
-                <a href="{% url 'beats' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'beats' %}?sort=genre&direction=desc" class="dropdown-item ">By Genre</a>
-                <a href="{% url 'beats' %}" class="dropdown-item">All Beats</a>
-            </div>
-        </li>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+            <a href="{% url 'home' %}" class="logo-font font-weight-bold nav-link mr-5">Home</a>
+        
+            <a href="{% url 'beats' %}" class="logo-font font-weight-bold nav-link mr-5">All Beats</a>
+        
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="genre-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="genre-link" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Beat Genres
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="genre-link">
@@ -29,5 +19,26 @@
                 <a href="{% url 'beats' %}?genre=dance,hip_hop,pop,rnb,piano_instrumentals" class="dropdown-item">All Beats</a>
             </div>
         </li>
+        <li>
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="genre-link" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Profile
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'add_beat' %}" class="dropdown-item">Beat Management</a>
+                    {% endif %}
+                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+            </div>
+        </li>
+        <a href="{% url 'view_bag' %}" class="logo-font font-weight-bold nav-link mr-5">Beat Bag</a>
+        
+        
     </ul>
 </div>
