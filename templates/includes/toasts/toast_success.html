@@ -1,20 +1,11 @@
 <div class="toast custom-toast" data-autohide="false">
-    <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <div class="toast-body">
-          Hello, world! This is a toast message.
-         </div>
-          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-      </div>
     <div class="w-100 toast-capper"></div>
-    <div class="toast-header bg-white text-dark">
+    <div class="toast-header">
         <strong>Success</strong>
-        <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+            
+        
     </div>
-    <div class="toast-body bg-white">
+    <div class="toast-body">
         <div class="row">
             <div class="col">
                 {{ message }}
@@ -23,31 +14,31 @@
         </div>
         {% if grand_total and not on_profile_page %}
             <p class="logo-font bg-white text-black py-1">Your Beat Bag ({{ beat_count }})</p>
-            <div class="bag-notification-wrapper">
-                {% for item in bag_items %}
-                    <div class="row">
-                        <div class="col-3 my-1">
+            {% for item in bag_items %}
+                <div>
+                    <p class="my-0"><strong>{{ item.beat.name }}</strong></p>
+                </div>
+                <div class="bag-notification-wrapper">
+                
+                    <div class="row toast-img">
+                        <div class="col-3">
                             {% if item.beat.image %}
                             <img class="w-100" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
                             {% else %}
                             <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.beat.name }}">
                             {% endif %}
                         </div>
-                        <div class="col-9">
-                            <p class="my-0"><strong>{{ item.beat.name }}</strong></p>
-                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
-                        </div>
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
             <div class="row">
                 <div class="col">
-                    <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">
-                        <span class="text-uppercase">Go To Secure Checkout</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
+                    <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-3">
+                        <span class="text-uppercase">Checkout</span>
                     </a>
+                    <button type="button" class="btn btn-outline-secondary btn-block rounded-3 close rounded-3" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">CLOSE</span>
+                    </button>
                 </div>
             </div>
         {% endif %}

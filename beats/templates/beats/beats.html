@@ -12,7 +12,7 @@
         <div class="col text-center mt-3">
             <h2 class="logo-font page_headers">Beats</h2>
             {% for c in current_genres %}
-                <button class="beat-genre-btt">
+                <button class="beat-genre-btt text-uppercase">
                     <a href="{% url 'beats' %}?genre={{ c.name }}">
                         {{ c.friendly_name }}
                     </a>
@@ -81,12 +81,8 @@
                                     </a>
                                 </button>
                             {% endif %}
-                            {% if request.user.is_order.order_number %}
-                                <a href="{{ beat.file.url }}" download="{{ beat.file.url }}">Download</a>
-                                <button class="btn"><i class="fa fa-download"></i> Download</button>
-                            {% endif %}
                             {% if request.user.is_superuser %}
-                                <small class="ml-3">
+                                <small class="mb-3">
                                     <a href="{% url 'edit_beat' beat.id %}">Edit</a> | 
                                     <a class="text-danger" href="{% url 'delete_beat' beat.id %}" 
                                     onclick="if (!confirm('Are you sure you want to DELETE this beat?')) { return false }">Delete</a>
