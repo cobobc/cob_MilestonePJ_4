@@ -8,9 +8,9 @@
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="genre-link" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Beat Genres
+                Genres <small><i class="fas fa-arrow-down"></i></small>
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="genre-link">
+            <div class="dropdown-menu" aria-labelledby="genre-link">
                 <a href="{% url 'beats' %}?genre=dance" class="dropdown-item">Dance</a>
                 <a href="{% url 'beats' %}?genre=hip_hop" class="dropdown-item">Hip Hop</a>
                 <a href="{% url 'beats' %}?genre=pop" class="dropdown-item">Pop</a>
@@ -22,9 +22,9 @@
         <li>
             <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="genre-link" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Profile
+                Profile <small><i class="fas fa-arrow-down"></i></small>
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+            <div class="dropdown-menu" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                         <a href="{% url 'add_beat' %}" class="dropdown-item">Beat Management</a>

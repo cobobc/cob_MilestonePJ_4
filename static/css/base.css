@@ -23,6 +23,19 @@ body {
     border: solid 2px;
 }
 
+/* .container-fluid {
+    background-color: #0dcaf0;
+} */
+
+.dropdown-menu {
+    background-color: #292025;
+    border: solid 1px #0dcaf0;
+}
+
+.dropdown-menu a {
+    color: #0dcaf0;
+}
+
 /*------------------------------------------------------------------------------------------------ index --*/
 
 .index-header {
@@ -117,9 +130,15 @@ body {
 
 /*------------------------------------------------------------------------------------------------ beats --*/
 
+.page_headers {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
 .beats-card {
     display: flex;
     align-items: center;
+    background-color: transparent;
 }
 
 .beats-card img {
@@ -127,6 +146,28 @@ body {
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.beat-name {
+    font-weight: 600;
+}
+
+.beat-name a {
+    text-decoration: auto;
+    color: #212529;
+}
+
+.beat-genre-btt {
+    background-color: #d97db3;
+    border-radius: 12px;
+    border: solid 1px #292025;
+    margin-bottom: 20px;
+}
+
+.beat-genre-btt a {
+    color: #292025;
+    text-decoration: auto;
+    font-weight: 600;
 }
 
 .row {

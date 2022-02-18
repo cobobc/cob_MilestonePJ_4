@@ -10,21 +10,22 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font">Beats</h2>
+            <h2 class="logo-font page_headers">Beats</h2>
             {% for c in current_genres %}
-                <a class="genre-badge text-decoration-none" href="{% url 'beats' %}?genre={{ c.name }}">
-                    <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
-                </a>
+                <button class="beat-genre-btt">
+                    <a href="{% url 'beats' %}?genre={{ c.name }}">
+                        {{ c.friendly_name }}
+                    </a>
+                </button>
             {% endfor %}
-            <hr class="w-50 mb-1">
         </div>
     </div>
     <div class="row">
         <div class="beat-container col-10 offset-1">
-            <div class="row mt-1 mb-2">
+            <div class="row mt-1 mb-5">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                    <div class="sort-select-wrapper w-50">
-                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    <div class="sort-select-wrapper">
+                        <select id="sort-selector" class="custom-select custom-select-sm rounded-3 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                             <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -62,21 +63,23 @@
                                     <audio src="{{ beat.file.url }}" class="mb-0" controls></audio>
                                 </div>
                                 <div class="card-body pb-0">
-                                    <strong><p class="mb-0">{{ beat.name }}</p></strong>
+                                    <h4 class="beat-name">
+                                        <a href="{% url 'beat_detail' beat.id %}">{{ beat.name }}</a>
+                                    </h4>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">€{{ beat.price }}</p>
+                                            <p>€{{ beat.price }}</p>
                                         </div>
                                     </div>
                                 </div>
                             {% if beat.genre %}
-                                <p class="small mt-1 mb-0">
-                                    <a class="text-muted" href="{% url 'beats' %}?genre={{ beat.genre.name }}">
+                                <button class="beat-genre-btt">
+                                    <a href="{% url 'beats' %}?genre={{ beat.genre.name }}">
                                         {{ beat.genre.friendly_name }}
                                     </a>
-                                </p>
+                                </button>
                             {% endif %}
                             {% if request.user.is_order.order_number %}
                                 <a href="{{ beat.file.url }}" download="{{ beat.file.url }}">Download</a>

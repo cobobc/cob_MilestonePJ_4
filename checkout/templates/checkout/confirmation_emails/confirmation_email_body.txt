@@ -5,7 +5,7 @@ This is a confirmation of your order at FOB Beats.
 Your can download your beat file <a href="{{ beat.file.url }}" download="{{ beat.file.url }}">here</a>.
 
 Order Number: {{ order.order_number }}
-Beat name: {{ beat.name }}
+Beat name: {{ {{ order.beat.name }} }}
 Order Date: {{ order.date }}
 Grand Total: ${{ order.grand_total }}
 
