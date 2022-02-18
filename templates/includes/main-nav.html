@@ -8,7 +8,7 @@
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="genre-link" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Genres <small><i class="fas fa-arrow-down"></i></small>
+                Genres <small><i class="fas fa-chevron-down"></i></small>
             </a>
             <div class="dropdown-menu" aria-labelledby="genre-link">
                 <a href="{% url 'beats' %}?genre=dance" class="dropdown-item">Dance</a>
@@ -22,7 +22,7 @@
         <li>
             <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="genre-link" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Profile <small><i class="fas fa-arrow-down"></i></small>
+                Profile <small><i class="fas fa-chevron-down"></i></small>
             </a>
             <div class="dropdown-menu" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}

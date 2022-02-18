@@ -176,6 +176,52 @@ body {
 
 /*------------------------------------------------------------------------------------------------ beat details --*/
 
+.beat-detail {
+    display: flex;
+    justify-content: center;
+}
+
+.beat-detail img {
+    width: 240px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.audio-detail {
+    display: flex;
+    justify-content: center;
+}
+
+.beat-info {
+    text-align: center;
+}
+
+.beat-qty {
+    display: flex;
+    justify-content: center;
+}
+
+.beat-price p {
+    font-size: x-large;
+}
+
+.shop-options {
+    text-align: center;
+}
+
+.qty_input {
+    border-color: #fff;
+    color: #fff;
+}
+
+.add-bag-btt {
+    background-color: #292025;
+}
+
+
+
+
 /* from Bulma */
 /* .icon {
     align-items: center;
@@ -289,6 +335,7 @@ input[name='q']::placeholder {
 
 .toast-capper {
     height: 2px;
+    border: solid 1px #0dcaf0;
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */

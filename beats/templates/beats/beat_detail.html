@@ -2,11 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+    
 {% endblock %}
 
 {% block content %}
@@ -14,8 +10,13 @@
 <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="page_headers">{{ beat.name }}</h2>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
+                <div class="image-container beat-detail">
                     {% if beat.image %}
                         <a href="{{ beat.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ beat.image.url }}" alt="{{ beat.name }}">
@@ -25,24 +26,27 @@
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ beat.name }}">
                         </a>
                     {% endif %}
+                    
+                </div>
+                <div class="card-body audio-detail">
+                    <audio src="{{ beat.file.url }}" class="mb-0" controls></audio>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="beat-details-container mb-5 mt-md-5">
-                    <div class="card-body pb-0">
-                        <audio src="{{ beat.file.url }}" class="mb-0" controls></audio>
+            <div class="col-12 col-md-6 col-lg-4 beat-info">
+                <div class="beat-details-container mb-3 mt-3">
+                    <!--<a href="{{ beat.file.url }}" download="{{ beat.file.url }}">Download</a>-->
+                    <div class="beat-price">
+                        <p class="mb-1">€{{ beat.price }}</p>
+                        <p>{{ beat.description }}</p>
                     </div>
-                    <a href="{{ beat.file.url }}" download="{{ beat.file.url }}">Download</a>
-                    <button class="btn"><i class="fa fa-download"></i> Download</button>
-                    <p class="mb-0">{{ beat.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">${{ beat.price }}</p>
-                    <p class="mt-3">{{ beat.description }}</p>
                     {% if beat.genre %}
-                        <p class="small mt-1 mb-0">
-                            <a class="text-muted" href="{% url 'beats' %}?genre={{ beat.genre.name }}">
-                                <i class="fas fa-tag mr-1"></i>{{ beat.genre.friendly_name }}
+                    <div class="genre-btn">
+                        <button class="btn btn-primary beat-genre-btt">
+                            <a href="{% url 'beats' %}?genre={{ beat.genre.name }}" class="text-uppercase">
+                                {{ beat.genre.friendly_name }}
                             </a>
-                        </p>
+                        </button>
+                    </div>
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
@@ -51,73 +55,44 @@
                             onclick="if (!confirm('Are you sure you want to DELETE this beat?')) { return false }">Delete</a>
                         </small>
                     {% endif %}
-                    <form class="form" action="{% url 'add_to_bag' beat.id %}" method="POST">
+                </div>
+                <form class="form" action="{% url 'add_to_bag' beat.id %}" method="POST">
+                    {% csrf_token %}
+                    
+                </form>
+            </div>
+            <div class="row shop-options mt-3 mb-5">
+                <form class="form" action="{% url 'add_to_bag' beat.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
-                            <div class="col-12">
-                                <div class="form-group w-50">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-black rounded-0" 
-                                                data-item_id="{{ beat.id }}" id="decrement-qty_{{ beat.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-minus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <input class="form-control qty_input" type="number" name="quantity" value="1"
-                                         min="1" max="1" data-item_id="{{ beat.id }}" id="id_qty_{{ beat.id }}">
-                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn-black rounded-0"
-                                                data-item_id="{{ beat.id }}" id="increment-qty_{{ beat.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-plus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
+                            <div class="beat-qty">
+                                <div class="form-group w-10">
+                                    
+                                    <input class="form-control qty_input" type="number" name="quantity" value="1"
+                                        min="1" max="1" data-item_id="{{ beat.id }}" id="id_qty_{{ beat.id }}">
+                                        
+                                    
                                 </div>
                             </div>
-
-                            <div class="col-12">
-                                <a href="{% url 'beats' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
-                                </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
-                            </div>
+                        </div>
+                        <div>
+                            <a href="{% url 'beats' %}" class="btn btn-secondary btn-lg">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">More beats</span>
+                            </a>
+                            <input type="submit" class="btn btn-primary btn-lg text-uppercase add-bag-btt" value="Add to Bag">
+                        
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-<!--
-    <div class="player">
-	    <canvas></canvas>
-		<div class="song">
-			<div class="artist">FOB</div>
-			<div class="name">{{ beat.name }}</div>
-            <div class="beat">{{ beat.file.url }}</div>
-		</div>
-		<div class="playarea">
-			<div class="prevSong"></div>
-			<div class="play"></div>
-			<div class="pause"></div>
-			<div class="nextSong"></div>
-		</div>
-		<div class="soundControl"></div>
-		<div class="time">00:00</div>
-	</div>
-    -->
    
 {% endblock %}
 
 {% block postloadjs %}
-    <!-- <script src="{% static 'beats/js/player_element.js' %}"></script> -->
 {{ block.super }}
-{% include 'beats/includes/quantity_input_script.html' %}
 {% endblock %}

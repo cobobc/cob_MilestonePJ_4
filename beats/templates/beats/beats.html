@@ -39,7 +39,7 @@
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-left">
                         {% if search_term or current_genres or current_sorting != 'None_None' %}
-                            <span class="small"><a href="{% url 'beats' %}">Beats Home</a> | </span>
+                            <span class="small"><a href="{% url 'beats' %}">All Beats</a> | </span>
                         {% endif %}
                         {{ beats|length }} Beats{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                     </p>
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                             {% if beat.genre %}
-                                <button class="beat-genre-btt">
+                                <button class="btn btn-primary beat-genre-btt text-uppercase">
                                     <a href="{% url 'beats' %}?genre={{ beat.genre.name }}">
                                         {{ beat.genre.friendly_name }}
                                     </a>
