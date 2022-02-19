@@ -219,7 +219,7 @@ body {
     background-color: #292025;
 }
 
-/* ------------------------------- bootstrap toasts */
+/* ---------------------------------------------------------------------------------------------- bootstrap toasts */
 
 .message-container {
     display: flex;
@@ -236,7 +236,13 @@ body {
 }
 
 .toast-header {
-    justify-content: center;
+    justify-content: space-between;
+    font-size: larger;
+}
+
+.toast-button{
+    background-color: transparent;
+    border: none;
     font-size: larger;
 }
 
@@ -249,6 +255,18 @@ body {
     justify-content: center;
 }
 
+/* ---------------------------------------------------------------------------------------------- add beat */
+
+.manage-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.manage-form {
+    display: flex;
+    justify-content: center;
+}
 
 /* from Bulma */
 /* .icon {
