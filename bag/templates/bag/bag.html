@@ -26,17 +26,14 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <a href="{% url 'beats' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                <a href="{% url 'beats' %}" class="btn btn-outline-black rounded-2">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
+                                    <span class="text-uppercase">More beats</span>
                                 </a>
-                                <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                    <span class="text-uppercase">Secure Checkout</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
+                                <a href="{% url 'checkout' %}" class="btn btn-black rounded-2">
+                                    <span class="text-uppercase">Checkout</span>
                                 </a>
                                 <p class="text-muted mb-5">A summary of your beat bag is below</p>
                             </div>
@@ -45,9 +42,9 @@
                             <div class="row">
                                 <div class="col-12 col-sm-6 mb-2">
                                     {% if item.beat.image %}
-                                    <img class="w-100" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
+                                    <img class="w-100 rounded-3" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
                                     {% else %}
-                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.beat.name }}">
+                                    <img class="w-100 rounded-3" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.beat.name }}">
                                     {% endif %}
                                 </div>
                                 <div class="col-12 col-sm-6 mb-2">
@@ -62,6 +59,7 @@
                                 
                                 <div class="col-12 col-sm-6 order-sm-last">
                                     <p class="my-0">Price: €{{ item.beat.price }}</p>
+                                    <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a></p>
                                 </div>
                             </div>
                             <div class="row"><div class="col"><hr></div></div>
@@ -86,9 +84,9 @@
                                 <tr>
                                     <td class="mt-2 w-25">
                                         {% if item.beat.image %}
-                                        <img class="w-100" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
+                                        <img class="w-100 rounded-3" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
                                         {% else %}
-                                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.beat.name }}">
+                                        <img class="w-100 rounded-3" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.beat.name }}">
                                         {% endif %}
                                     </td>
                                     <td class="py-3">
