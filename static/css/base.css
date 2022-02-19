@@ -18,6 +18,12 @@ body {
     color: #0dcaf0;
 }
 
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:active {
+    color: #97ebfc;
+}
+
 .navbar-toggler {
     color: #0dcaf0;
     border: solid 2px;
