@@ -3,11 +3,6 @@
 {% load bag_tools %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block content %}
@@ -15,8 +10,7 @@
     <div class="container mb-2">
         <div class="row">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Beat Bag</h2>
+                <h2 class="logo-font mb-3 mt-5 manage-header">Beat Bag</h2>
                 <hr>
             </div>
         </div>
@@ -24,20 +18,73 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive rounded">
+                    <div class="d-block d-md-none">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="mt-4"><strong>Total: €{{ grand_total|floatformat:2 }}</strong></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <a href="{% url 'beats' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Shopping</span>
+                                </a>
+                                <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <span class="text-uppercase">Secure Checkout</span>
+                                    <span class="icon">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </a>
+                                <p class="text-muted mb-5">A summary of your beat bag is below</p>
+                            </div>
+                        </div>
+                        {% for item in bag_items %}
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-2">
+                                    {% if item.beat.image %}
+                                    <img class="w-100" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
+                                    {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.beat.name }}">
+                                    {% endif %}
+                                </div>
+                                <div class="col-12 col-sm-6 mb-2">
+                                    <div class="card-body audio-detail">
+                                        <p><strong>{{ item.beat.name }}</strong></p>
+                                    </div>
+                                    
+                                    <div class="card-body audio-detail">
+                                        <audio src="{{ beat.file.url }}" class="mb-0" controls></audio>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-sm-6 order-sm-last">
+                                    <p class="my-0">Price: €{{ item.beat.price }}</p>
+                                </div>
+                            </div>
+                            <div class="row"><div class="col"><hr></div></div>
+                        {% endfor %}
+                        <div class="btt-button">
+                            <a class="btt-link d-flex h-100">
+                                <i class="fas fa-arrow-up mx-auto my-auto"></i>
+                            </a>	
+                        </div>
+                    <div class="table-responsive rounded d-none d-md-block">
                         <table class="table table-sm table-borderless">
-                            <thead class="text-black">
+                            {% for item in bag_items %}
+                            <thead class="text-black tex">
                                 <tr>
-                                    <th scope="col">Beat</th>
-                                    <th scope="col"></th>
+                                    <th scope="col"><strong>{{ item.beat.name }}</strong></th>
+                                    <th scope="col">Audio</th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
 
-                            {% for item in bag_items %}
+                            
                                 <tr>
-                                    <td class="p-3 w-25">
+                                    <td class="mt-2 w-25">
                                         {% if item.beat.image %}
                                         <img class="w-100" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
                                         {% else %}
@@ -45,43 +92,16 @@
                                         {% endif %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.beat.name }}</strong></p>
+                                        <div class="col-12 col-sm-6 mb-2">
+                                            <p><strong>{{ item.beat.name }}</strong></p>
+                                        </div>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">€{{ item.beat.price }}</p>
+                                        <p class="my-0">€{{ item.beat.price }}   <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a></p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                            {% csrf_token %}
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-minus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                    <input class="form-control form-control-sm qty_input" type="number"
-                                                        name="quantity" value="{{ item.quantity }}" min="1" max="1"
-                                                        data-item_id="{{ item.item_id }}"
-                                                        id="id_qty_{{ item.item_id }}">
-                                                    <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-plus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">€{{ item.beat.price | calc_subtotal:item.quantity }}</p>
+                                        
+                                        
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -109,12 +129,12 @@
                         </table>
                     </div>
                 {% else %}
-                    <p class="lead mb-5">Your beat bag is empty.</p>
+                    <p class="lead mb-5">Your beat bag is empty</p>
                     <a href="{% url 'beats' %}" class="btn btn-outline-black rounded-0 btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="text-uppercase">Continue looking</span>
+                        <span class="text-uppercase">More Beats</span>
                     </a>
                 {% endif %}
             </div>
@@ -124,14 +144,14 @@
 
 {% block postloadjs %}
 {{ block.super }}
+    <script type="text/javascript">
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
+    </script>
 {% include 'beats/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
