@@ -430,14 +430,23 @@ input[name='q']::placeholder {
 
 /* Allauth form formatting */
 
+.form-check {
+    margin-top: 20px;
+}
+
+.form-control {
+    margin-top: 10px;
+}
+
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
     color: #6c757d; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
-    border-color: #000;
-    border-radius: 0;
+    border-color: rgb(66, 66, 66);
+    border-radius: 5px;
+    /* margin-top: 10px; */
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
