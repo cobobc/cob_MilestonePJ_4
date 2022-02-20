@@ -2,13 +2,13 @@
 
 ## Purpose 
 
-The purpose of this site is to complete the third Milestone Project for the Code Institute's Full Stack Developer course and can can be found [here](https://milestone-3-cooking-app.herokuapp.com/).
+The purpose of this site is to complete the fourth Milestone Project for the Code Institute's Full Stack Developer course and can can be found [here](https://cob-milestonepj-4.herokuapp.com/).
 
 ## Cookbook Website
 
 ![Cookbook overview](static/assets/img/cookbook_app.png)
 
-Ciaran O'Brien has been requested to create a cook book app which allows users to create and manage a their own cooking recipes. The app will allows users to create a profile in which they can store their favourite recipes. Users will be able to view other user recipes too. An administation user will be able to do everything a regular user can do but will also have the capacity to create and manage the recipe categories the regular users choose.
+Fionn O'Brien (FOB) requested an app store to sell his beats. FOB requires a responsive website that allows users to listen to his beats and buy them for their own musical purposes. Once the user buys a beat(s) they will receive it as a download link in the sale confirmation email. The app allows users to create a profile where they can view their order history. An administation superuser will allow FOB to manage the site on his own with the capacity to add, delete and edit beats to the store.
 
 ## User Experience (UX)
 
@@ -16,48 +16,50 @@ Ciaran O'Brien has been requested to create a cook book app which allows users t
 
 #### First Time User Goals
 
-*   As a First Time user, I want to view clear and concise content on mobile and tablet.
+*   As a First Time user, I want to view clear and concise content on mobile, tablet and desktop.
 *   As a First Time user, I want to learn and understand what the site offers.
-*   As a First Time user, I want to find the registration page.
-*   As a First Time user, I want to easily register a Cookbook account.
-*   As a First Time user, I want to recieve an email that welcomes me and acknowledges that I have created an account.
-*   As a First Time user, I want to add a recipe.
-*   As a First Time user, I want to view the recipe on the recipes page.
-*   As a First Time user, I want to view other user's recipes on the recipes page.
-*   As a First Time user, I want to be able to edit my recipes.
-*   As a First Time user, I want to be able to delete my recipes.
+*   As a First Time user, I want to easily navigate to the store.
+*   As a First Time user, I want to easily search through the beat genres.
+*   As a First Time user, I want to search the store with key words.
+*   As a First Time user, I want to create an account.
+*   As a First Time user, I want to listen to different beats.
+*   As a First Time user, I want to add beat to my bag.
+*   As a First Time user, I want to easily adjust my bag by removing beats if I require.
+*   As a First Time user, I want to buy a buy using a credit card.
+*   As a First Time user, I want to receive the beat(s) I bought in an email.
 *   As a First Time user, I want to seemlessly navigate through all pages of the site.
-*   As a First Time user, I want to easily connect with Cookbook's social platforms.
+*   As a First Time user, I want to easily connect with FOBs social platforms.
 *   As a First Time user, I want to log out of my account.
 
 #### Returning User Goals
 
-*   As a Returning user, I want to easily use a recipe while cooking.
-*   As a Returning user, I want to easily add more recipes.
-*   As a Returning user, I want to categorize all my recipes.
-*   As a Returning user, I want to search for certain recipes on the recipes page.
-*   As a Returning user, I want to navigate back to the recipe page after finding a recipe using the search tool.
+*   As a Returning user, I want to view my order history.
+*   As a Returning user, I want to update my user information.
+*   As a Returning user, I want to sort through the beat by genre A-Z or price (high-low).
+*   As a Returning user, I want to search for specific type of beat using the search tool.
+*   As a Returning user, I want to navigate back to the beat store after adding a beat to my bag.
+*   As a Returning user, I want to be able to generate a new password if I forgot my original one.
 
 #### Frequent User Goals
 
 The frequent user wants the following:
 
-*   As a Frequent user, I want to add, edit and delete as many of my recipes as I want.
-*   As a Frequent user, I want to use this app as my only cooking tool.
-*   As a Frequent user, I want to search for new recipes other users have added over time.
+*   As a Frequent user, I want to look through the store for new beats or genres.
 
 #### Admin User Goals
 
 The admin user wants the following:
 
-*   As an admin user, I want to manage (add, edit and delete) the recipe categories.
-
+*   As an admin user, I want to manage (add, edit and delete) the beats on site.
+*   As an admin user, view entire order history from all users.
+*   As an admin user, I want to view and manage user accounts that signed up to the site.
+*   As an admin user, I want to view all purchases via Stripe.
 
 ### Design
 
 #### Colour Scheme
 
-The main colours used are #9de3c5 (light green), #000 (white), and #3a4242 (slate). The green was chosen for its association with vegatables and the light green gives a ligth welcome feel. The white and slate are to give nice contrasts.
+The main colours used are #292025 (dark purple), white, and #0dcaf0 (light blue). These colors were based around the FOB logo and the image used on the index page.
 
 #### Font
 
@@ -65,7 +67,7 @@ The **Cairo** font is used through the whole app.
 
 #### Imagery
 
-The images used in the app are sourced from google images and was granted permission to use for this project.
+Images and audio files were provided by and owned by my brother Fionn O'Brien (FOB) and he gave permission to use the files for this project.
 
 #### Wireframes
 
@@ -207,7 +209,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 ### Features Left to Implement
 
-*   A pop up visual describing the password criteria for registering when a user doesn't meet the criteria.
+*   A visual popup describing that only one of each beat can added to the bag. This needs to be supported by backend code to prevent user from adding multiple counts of the one beat.
 
 
 ## Technologies Used
@@ -216,29 +218,17 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   CSS - Used to style the website.
 
-*   JavaScript - used to provide interactive features to the navbar (sourced from startbootstrap.com) and to always keep the copyright year in the current year (source: Tim Nelson - Tutor at Code Institute)
+*   Djang Framework - high-level Python web framework that provided user authentication, content administration, email functionality and all of the backend funcionality for FOB Beats.
 
-*   Python - used to provide the main app backend functionality, user registration, log in, log out, user data interacting with MongoDB, jinja templating.
-
-*   Flask - a web framework that provided the tools, libraries and technologies required to build the Cookbook app.
-
-*   [MongoDB](https://www.mongodb.com/) - used to store and manage the users data.
-
-*   Werkzeug - used for user password security.
-
-*   [RandomKeyge](https://randomkeygen.com/) - used to create the secret key variable in the env.py file
+*   JavaScript - used to provide interactive features throughout the site.
 
 *   [Heroku](https://id.heroku.com/login) -  used to deploy app
 
-*   [EmailJS](https://www.emailjs.com/) - used in conjuction with JS to allow the website to send email to the user upon registration.
-
-*   [StartBootstrap](https://startbootstrap.com/theme/clean-blog) - used this as the source code for the theme of the app. Includes JS for interactive nav bar use.
-
-*   [Bootstrap](https://getbootstrap.com/) - used throughout the site for layout and styling. 
+*   [Bootstrap](https://getbootstrap.com/) - used throughout the site for layout, styling and components. 
 
 *   [Google Fonts](https://fonts.google.com/) - provided the *Cairo* font used throughout the website.
 
-*   [Font Awesome](https://fontawesome.com/) - provided the scocial media icons used in the Footer.
+*   [Font Awesome](https://fontawesome.com/) - provided the icons used through the site.
 
 *   [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/open/) - used to inpect each page, debug, lighthouse test and test different CSS styles.
 
@@ -330,16 +320,6 @@ The CSS validations produced 0 errors.
 
 JavaScript validations produced 0 errors.
 
-##### EmailJS
-
-During testing of EmailJS (the emails sent upon user registration), it must be noted that there were occasional faults i.e. users successfully registered but did not receive the welcome email. The issue could be linked with the type email account i.e. hotmail, gmail, etc. For example, while testing EmailJS in a mentor meeting (Daisy Mc Girr), she registered an account with a gmail account and did not received a welcome email. She then registered with an outlook account and received the welcome email. Please note this while assessing the app.
-
-Please see the attached screenshots of successful welcome emails received upon registration.
-
-*   ![EmailJS Welcome email example 1](static/assets/img/testing/EmailJS_Daisy.png)
-*   ![EmailJS Welcome email example 2](static/assets/img/testing/EmailJS_Oliver.jpg)
-*   ![EmailJS Welcome email example 3](static/assets/img/testing/EmailJS_cob.png)
-
 
 #### User Goal Results
 
@@ -423,26 +403,59 @@ Created the project by:
 2.  Selecting the **Respositories** tab.
 3.  Selected the **New** button.
 4.  Under Repository tempate, select the Code Institute template from the dropdown menu.
-5.  Entered milestone_project_2 for the **Repository name**.
+5.  Entered milestone_project_4 for the **Repository name**.
 6.  Select **Create Repository**. 
 
 ### During the Project
 
 The following commands were used throughout the project:
 
-*   git add . - This command was used to add files to the staging area before commiting.
-*   git commit -m "commit message explaining the updates" - This command was used to to commit changes to the local repository.
-*   git push - This command is used to push all commited changes to the GitHub repository.
+*   `git add .` - This command was used to add files to the staging area before commiting.
+*   `git commit` - This command was used to to commit changes to the local repository.
+*   `git push` - This command is used to push all commited changes to the GitHub repository.
+*   `python3 manage.py runserver` - run the site locally
+*   `python3 manage.py migrate` - migrate newly installed applications
+*   `python3 manage.py loaddata` - load beat and genre data
 
 ### Deployment to Heroku
 
-1.  Creat application:
+1.  Create application:
 
     1. Navigate to Heroku.com and login.
     1. Select the **new** button.
     1. Select **create new app**.
     1. Enter the app name.
     1. Select the region.
+    1. In the resourced tab > Provision new Postgres, select **Provison** in the Postgres plan popup.
+
+1. Connect Heroku to the terminal:
+
+    1. In the gitpod terminal, install `dj-database-url`.
+    1. In the gitpod terminal, install `psycopy2-binary`.
+    1. In the gitpod terminal, run `freeze > requirements.txt`.
+
+    1. In setting.py, import dj-database-url from the heroku app > settings > reveal configs.
+    1. Save settings.py
+    1. Run `python3 manage.py migrate`
+    1. Run `python3 manage.py loaddata genres`
+    1. Run `python3 manage.py loaddata beats`
+    1. Sign in as superuser in the terminal.
+    1. In the gitpod terminal, install `gunicorn`.
+    1. Create Procfile to serve the app (fob-beats).
+
+    1. In the gitpod terminal, run `heroku login -i`
+    1. Run `heroku config:set DISABLE_COLLECTSTATIC app cob-milestonepj-4`
+
+    1. Update ALLOWED HOST FIELD in settngs.py.
+    1. Save settings.py
+
+    1. In the terminal, run `git add .`
+    1. Run `git commit`
+    1. Run `git push`
+    1. Run `git push heroku main` to deploy to heroku
+    1. Run `heroku git:remote -a cob-milestonepj-4`
+    1. Run `git push heroku main`
+
 
 1.  Set up connection to Github Repository:
 
@@ -450,27 +463,26 @@ The following commands were used throughout the project:
     1. Enter the repository name for the project and select **search**.
     1. When the repo has been found, select the **connect** button.
 
-1.  Set environment variables:
-
-    1. Select the **Settings** tab.
-    1. Select the Reveal Config Vars button and add the following keys:
-        *   IP: 0.0.0.0
-        *   PORT: 5000
-        *   SECRET_KEY: 
-        *   MONGO_URI:
-        *   MONGO_DBNAME
-
 1.  Enable automatic deployment:
 
     1. Select the **Deploy** tab.
     1. In the Automatic deploys section, choose the branch you want to deploy.
     1. Select **Enable Automation Deploys**.
 
+
+1. Connect Django to the S3 Bucket:
+
+    1.  In the terminal, install `boto3` and `django-storages`
+    1. Enter the AWS_ACCESS_KEY and SECRET_KEY into heroku configs and settings.py
+    1.  Add USE_AWS value to True in Heroku
+    1. Delete the DISABLE_COLLECTSTATIC value in heroku
+    1. Create a custom_storages.py file for product images.
+
 ### Run Locally
 
 **Note:** The project will not run locally with database connections unless the user sets up an env.py file configuring IP, PORT, MONGO_URI, MONGO_DBNAME and SECRET_KEY.
 
-1.  Navigate to the GitHub [Repository](https://github.com/cobobc/milestone_3_cooking_app).
+1.  Navigate to the GitHub [Repository](https://github.com/cobobc/cob_MilestonePJ_4.git).
 1.  Select the Code drop down menu.
 1.  Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL from the HTTPS dialogue box.
 1.  Open your developement editor of choice and open a terminal window in a directory of your choice.
