@@ -173,26 +173,20 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   Beat Management Pages
 
-    * 
+    *   The add a new a beat and edit an existing beat pages are straight forward forms. The inputs are genre, beat name, description, price, upload audio file, and upload image file.
+    *   The audio and image buttons open the local files to allow the admin user to upload files from their local drive.
+    *   The **add beat** button adds the beat to the store and the **edit beat** button updates the existing beat in the store.
 
 *   Bootstrap Toast Messages
 
-    *   A heading with relevant information for the user appears (with a hr underneath to give spacing) in the following user interactions with the app:
-        *   If a user trying to register enters a username that already exists (top of registration page) - **Oops! This username already exists**
-        *   If a user trying to register enters an email that already exists (top of registration page) - **Oops! This email already exists**
-        *   If a user successfully registers an account (top of profile page) - **You have successfully registered! Happy cooking!**
-        *   If a returning user successfully logs in (top of the profile page) - **Welcome, {username}**
-        *   If a returning user enters an incorrect password (top of the log in page) - **Incorrect Username and/or Password**
-        *   If a returning user enters an incorrect username (top of the log in page) - **Incorrect Username and/or Password**
-            * The **Incorrect Username and/or Password** message was chosen for both password and username protection. This is user security protection. The hypothtetical hacker will not know what field they have entered incorrect details into.
-        *   If a user has logged out (top of the log in page) - **You have been logged out**
-        *   When a user has added a new recipe (top of Recipes page) - **Your recipe has been added**
-        *   When a user has edited a recipe (top of Recipes page) - **Your recipe has been updated**
-        *   When a user has deleted a recipe (top of Recipes page) - **Your recipe was deleted**
-        *   When an admin user has added a new recipe category (top of Recipes page) - **New Category Added**
-        *   When an admin user has edited a recipe category (top of Recipes page) - **Category Successfully Updated**
-        *   When an admin user has deleted a recipe category (top of Recipes page) - **Category Deleted**
-    *   If a user refreshes the page on which a flash message is displayed, the flash message with disappear. 
+    *   These are pop ups that appear in the top-right of the age to the user when they perform a certain action on the app. The popups ccontain messages to the user and an option to close the popup.
+    *   The toast appear in the following cases:
+        *   A user successfullly signs in
+        *   A user successfullly logs out
+        *   A user adds a beat to the bag - this messages contains a list of all the items in the bag and button option to take the user the checkout page.
+        *   A user successfullly purchases a product - message contains the order number and that a confirmation email has been sent to the given email address.
+        *   Admin user is editing a beat
+        *   Admin user has successfully added a beat
 
 *   Error 404 and Error 500 pages
 
