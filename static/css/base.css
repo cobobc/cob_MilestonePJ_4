@@ -585,6 +585,14 @@ input[name='q']::placeholder {
         font-size: 1rem;
     }
 
+    /*---------------------------------------------------------------------------------error pages*/
+
+    .error-message {
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+    }
+
     /* .btn.btn-outline-black.rounded-0,
     .btn.btn-black.rounded-0 {
         padding: .375rem .375rem;
