@@ -30,6 +30,7 @@ Fionn O'Brien (FOB) requested an app store to sell his beats. FOB requires a res
 *   As a First Time user, I want to seemlessly navigate through all pages of the site.
 *   As a First Time user, I want to easily connect with FOBs social platforms.
 *   As a First Time user, I want to log out of my account.
+*   As a First Time user, I want to buy a beat(s) without having to create an account.
 
 #### Returning User Goals
 
@@ -86,41 +87,77 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   Navigation bar
 
-    *   Featured on every page, but depending on the user can differ in the following scenarios:
-        1.  A user that has not registered or logged in - the nav bar contains links to the home, register and login pages.
-        1.  A user that has registered and is logged in - the nav bar contains links to the home, profile, add recipe and recipes pages, and a link to log out. 
-        1.  An admin user - the nav bar contains links to the home, profile, add recipe, recipes, manage recipe categories pages, and a link to log out.
-            *   If the user selects the Log Out option on the nav bar, a pop up will appear to confirm the log out. If the user confirms, the user in navigated to the Login page (desktop and tablet only).
+    *   Featured on every page, but depending on the user can differ in the following two scenarios:
+        1.  An everyday user - the nav bar contains links to the home, all beats, genres (dropdown to every genre link), profile (dropdown to login or register - this changes to my profile and logout options when the user has logged in), and the beat bag.
+        1.  The only difference for an admin user is that a Beat Management option displays in the profile dropdown when they are logged in.
         
-    *   The title in the nav bar provides the user with a link back to the home page. 
-    *   The navigation options becomes contained in a responsive Bootstrap burger icon for tablet and mobile devices that provides the page option in a dropdown form. 
-    *   When a user has scrolled down a page to a point where the nav bar is no longer visible, as soon as the user begins scrolling up the page, the navbar becomes visible    again.
+    *   The FOB Beat logo provides the user with a link back to the home page. 
+    *   The navigation options becomes contained in a responsive Bootstrap burger icon for tablet and mobile devices that provides the nav options in a dropdown form.
 
 *   Footer
 
-    *   Featured identically on every page and contains Font Awesome icons used to provide external links to Cookbook's social platforms. Each external link has the attribute of target="_blank" which opens the link in a new tab, keeping the user on the site and allowing for seemless UX.
+    *   Featured identically on every page and contains Font Awesome icons used to provide external links to FOBs social platforms. Each external link has the attribute of target="_blank" which opens the link in a new tab, keeping the user on the site and allowing for seemless UX.
 
 *   Home page
 
-    *   Provies a friendly/inviting cooking image with the Cookbook title and a one line summary of the site over the image.
-    *   Underneath the image there is a text that provides the user with more detail about what the app offers. 
+    *   The striking background image creates an inticing effect for the user.
+    *   The big header text explains what the site is - a beat store
+    *   The user has two immediate options - to use the search tool and search for a beat using key words or click the SHOP NOW button which navigates the user to beat store. 
+    *   This is good UX as the user within the 1st 10 seconds of arriving know that this is a store and has two options to go straight to where they can explore.
+    *   A short About section at the bottom gives further explanation to twhat the store is and how the user might use a beat for themselves. And a SHOP NOW button is provided at the bottom.
+
+*   All Beats/Genres Page
+
+    *   All beats (and info) are structured in card form. Each card has an image, audio player (to play the beat), the beat name, the price, and a genre button.
+    *   There are navigation options within the card: the image and the beat name are links to the beat detail page. The genre button navigated the user to the beats of that specific genre.
+    *   Within the audio player the user can play, pause, skip to a specific part of beat, mute the volume, and alter the speed of the beat.
+    *   The user can sort the beats in the following ways: Price (high to low, or low to high), Name (A-Z, Z-A), and Genre (A-Z, Z-A). The sorting dropdown options are at the top right of the page and to the left a beat count is provide to tell the user how many beats there are based on the genre selected.
+    *   A jump back to the top of the page button is provided in the bottom right of the page for good UX.
+    *   Bootstrap responsive displays the beats columns of 4 on 1 row (4 x 1) for large screen, 3 x 1 for medium screens, 2 x 1 on smaller tablets, 1 x 1 on mobile.
+    *   When the user selects a specific genre, the only difference is that the genre button appears underneat the main page header.
+    *   For admin users - edit and delete options display underneath the genre button.
+
+*   Beat Detail page
+
+    *   Page header is the name of the beat
+    *   The page provides the image, audio, price, description and genre button (if clicked navigates the user to that genres beat list).
+    *   Two large button ot the bottom of the page to Add the beat to their bag or naviagte back to the beat store.
+    *   Responsive - two columns on all device except mobile. Mobile displays a single column.
+    *   For admin users - edit and delete options display underneath the genre button.
+
+*   Beat Bag
+
+    *   This page provides the user with all the beats they have added to the bag, the price, and an option to remove the item from the bag.
+    *   The page also provides the total cost and options to proceed to checkout or go back for more beats.
+    *   For desktop, the beats info appear in a table with the info spread across the row and the check out (and total) appears at the bottom of the page.
+    *   For tablet, the total and checkout options appear at the top of the page. The beat imag, price and remove option appear on the left column and the right column on the same row displays the beat name and audio.
+    *   For mobile, the tablet view is condensed into one single column.
+    *   A jump back to the top of the page button is provided in the bottom right of the page for good UX.
+
+*   Checkout page
+
+    *   This page provides order summary (beat image, name, price, subtotal and total costs), user details name and email for where the order will be sent, the payment by debit or credit card option (processed by strip in the backend), and the option to complete the purchase.
+    *   For desktop, the apge has 2 main columns. The left, contains the user details input options, a radio button option to save the user detals (if the user is not registered or not looged in - the option appears as Create an account or sign in to save details), the card payment input option, and the complete purchase option. The right, contains the order summary and total cost.
+    *   For tablet and mobile, all features are consensed into 1 column with the order history push to the on top of the user details, etc.
+
+*   Checkout success page
+
+    *   This page provides a thank you message to the user and confirms an email has been sent to the email address provided.
+    *   This page provides an order history tabe - order number, date, beats purchased and total cost, and an button aoption back to the beat store.
 
 *   Register Page
 
-    *   A header with short descriptive text on how to register.
-    *   The form houses the required fields (username, email, and password) a user must enter to register.
-    *   A large register button makes it clear and easy to register.
-    *   When the user the clicks the register button, the user is sent to their profile page, and their registration details are sent and stored in mongodb.
-    *   When the user the clicks the register button, they will recieve an email welcoming them and affirming they have registered. This feature is via EmailJS funtionality embedded in the registration form.
-    *   There is medium size text under the register button asking the user if they are already registered and provides a link to the log in page in case the user has mistakenly navigated to the register page.
+    *   This provides the user the option to create a FOB Beat account.
+    *   The user can use the form to input their email, username, and password. The user clicks the sign up button and they are directed to the verify email section.
+    *   An email is sent to the given email and the user clicks the link to in the email to verify the email and a FOB Beat account is created.
+    *   On the register page, the user has to option to navigate to the sign in (medium sized text below the sign up button) page if they already have an account and have mistakenly navigated to the register page.
 
 *   Login Page
 
-    *   A header with short descriptive text on how to log in.
-    *   The form houses the required fields (username and password) a user must enter to log in.
-    *   A large log in button makes it clear and easy to login.
-    *   When the user the clicks the login button, the user is sent to their profile page.
-    *   There is medium size text under the register button asking the user if they are new to the site and provides a link to the register page in case the user has mistakenly navigated to the log in page.
+    *   The user can use the form to input their email or username, and password. The user clicks the **sign in** button and they are directed to the verify email section.
+    *   Before selecting **sign in** the user can select the radio button to remember the users login deails.
+    *   The user clicks the **sign in** button and they are directed back to the home page where they start to explore.
+    *   There is medium size text under the page header asking the user if they are new to the site and provides a link to the register page in case the user has mistakenly navigated to the log in page.
     
 *   Profile Page
 
@@ -128,62 +165,17 @@ The features throughout the site are mininal text, larger text and clear buttons
     *   For desktop and tablet, there are two cards on the same row with an image and a button each so the user can either go the recipes page or add recipes page. On mobile the cards will sit on top of each other in the same column.
 
 
-*   Recipes Page
+*   My Profile Page
 
-    *   A header with short descriptive text informing the user about the recipes page. 
-    *   The search bar is postioned near the top of the page so that if the user doesn't want to scroll down the page to find what they want, they can just type keywords of what they are looking for. The search functionality - when prompted - searches through the data within the created recipes. Validation is coded (max and min lengths, and pattern) into the search bar to protect against the potential of someone breaking the site.
-    *   If the user has a successful search, they will be presented with the recipe(s) that match the search. The reset button gives the option to the user if they want to see all the recipes again.
-    *   All recipes are presented within cards. Within the cards is the recipe category as the main heading followed by the recipe name in a child heading. Underneath is two Bootstrap accordian components which house the ingredients and the cooking instructions respectively. The UX theory here is that if the user is using this app while cooking, they can open and close both accordians to suit their need. For example, to negate the user having to scroll down through all of the ingredients to get to the cooking instructions. They can simply close the ingredients accordian and open only the cooking instructions.
-    *   If the recipe was not created by the current user, the remaining content in the card is the cooking time and user name who created the recipe. If the recipe was created by the current user, they will have optinon to edit or delete the recipe in button form. If the user selects **Delete**, they are presented with a pop up asking them to confirm deletion. If they confrim the deletion, the recipe is removed for the Recipes page and is also removed from the mongodb database. If the user selects **Edit**, they are brought to the edit recipe page.
-    *   Using the Bootstrap grid system three cards will appear on one row for the desktop. Two cards on one row for tablet, and one column for mobile.
+    *   This page provides a welcome message and instruction on how to use the profile page.
+    *   The users order history is contained within a collapsable bootstrap accordian feature. When the user user slect the accordian their order history displays in table form - order number, date, items, and order total.
+    *   Below the oreder history is the users main deails in a form - name and email. The user can update this information as they want and selcting the **update information** button will update and save the new information.
 
-*   Add Recipe Page
+*   Beat Management Pages
 
-    *   A header with short descriptive text on how to add recipe.
-    *   An easy to use form with the following fields:
-        1.  Recipe category - this is a dropdown option. The user can choose from the different recipe categories. The categories are manged by an Admin account.
-        1.  Recipe name - user types recipe name.
-        1.  Cooking Time - user types cooking time.
-        1.  Ingredients - user types ingredients.
-        1.  Cooking Instructions - user types cooking instructions.
-    *   The user then selects **Add Recipe**. This sends the user back to the Recipes pages with a message at the top of the page informing them that the recipe has been successfully added to the recipes page. The recipe data is sent and stored in mongodb.
+    * 
 
-*   Edit Recipe Page
-
-    *   A header with short descriptive text on how to edit a recipe.
-    *   An easy to use form with the fields that are already populated with the existing recipe data:
-        1.  Recipe category - this is a dropdown option. The user can choose to edit from the different recipe categories.
-        1.  Recipe name - user can edit recipe name.
-        1.  Cooking Time - user can edit cooking time.
-        1.  Ingredients - user can edit ingredients.
-        1.  Cooking Instructions - user can edit cooking instructions.
-    *   The user then selects **Edit**. This sends the user back to the Recipes pages with a message at the top of the page informing them that the recipe has been successfully updated. The updated recipe data is sent and stored in mongodb.  
-    *   If the user doesn't want to edit or just wants to navigate back to the Recipes page they can select the **Cancel** button.
-  
-*   Manage Recipe Category Page
-
-    *   A header with short descriptive text informing the user about how to manage the recipe categories.
-    *   The categories are presented in card form with the name of the category and an edit and delete button.
-    *   The user is brought to the Edit category page if they click the **Edit** button. If they choose the **Delete** button, a pop up requesting deletion confirmation. If they confrim the deletion, the category is removed for the Manage Recipe Category page and is also removed from the mongodb database.
-    *   A large button to add new category is predominant on this page to provide no confusion on how to add. The button links to Add Recipe Category page.
-    *   Using the Bootstrap grid system four cards will appear on one row for the desktop. Two cards on one row for table, and one column for mobile.
-
-*   Add Recipe Category Page
-
-    *   A header with short descriptive text on how to add a new recipe category.
-    *   A simple form with one text input option for the admin user to type a new category.
-    *   Validation is coded (max length) into the form to protect against the potential of someone breaking the site or accidently creating a jargon category.
-    *   Large Add Category button is underneath the form to make it clear to click the button when done typing the new category. If the user selects the add new category button they will be naviagted back to the Manage Recipe Categories page. The new category data is sent and stored in mongodb.
-
-*   Edit Recipe Category Page
-
-    *   A header with short descriptive text on how to edit a recipe category.
-    *   A simple form with one text input option for the admin user to edit the category. The category is prepopulated with the existing category the user wants to edit.
-    *   Validation is coded (max length) into the form to protect against the potential of someone breaking the site or accidently creating a jargon category.
-    *   Large Edit Category button is underneath the form to make it clear to click the button when done typing the edited category. If the user selects the edit category button they will be naviagted back to the Manage Recipe Categories page. The updated category data is sent and stored in mongodb.
-    *   The user can click the Cancel button to discard any edits and return to the Manage Recipe Categories page. 
-
-*   Flash Messages
+*   Bootstrap Toast Messages
 
     *   A heading with relevant information for the user appears (with a hr underneath to give spacing) in the following user interactions with the app:
         *   If a user trying to register enters a username that already exists (top of registration page) - **Oops! This username already exists**
@@ -223,6 +215,8 @@ The features throughout the site are mininal text, larger text and clear buttons
 *   JavaScript - used to provide interactive features throughout the site.
 
 *   [Heroku](https://id.heroku.com/login) -  used to deploy app
+
+*   [AWS]() - Used the S3 bucket to host static and media files
 
 *   [Bootstrap](https://getbootstrap.com/) - used throughout the site for layout, styling and components. 
 
