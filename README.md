@@ -43,8 +43,6 @@ Fionn O'Brien (FOB) requested an app store to sell his beats. FOB requires a res
 
 #### Frequent User Goals
 
-The frequent user wants the following:
-
 *   As a Frequent user, I want to look through the store for new beats or genres.
 
 #### Admin User Goals
@@ -206,7 +204,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   Djang Framework - high-level Python web framework that provided user authentication, content administration, email functionality and all of the backend funcionality for FOB Beats.
 
-*   JavaScript - used to provide interactive features throughout the site.
+*   JavaScript - used to provide interactive features throughout the site e.g. the back to top button and handling strip payments.
 
 *   [Heroku](https://id.heroku.com/login) -  used to deploy app
 
@@ -228,7 +226,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   [PX converter](https://nekocalc.com/px-to-rem-converter) - to covert px values to rem values.
 
-*   [Stack Overflow](https://stackoverflow.com/questions/9139075/how-to-show-a-confirm-message-before-delete) - used to help create the pop up confirmation alerts when the user deletes data or tries to log out.
+*   [Stack Overflow](https://stackoverflow.com/questions/9139075/how-to-show-a-confirm-message-before-delete) - used to help create the pop up confirmation alerts when the user deletes data.
 
 
 ## Testing
@@ -256,45 +254,35 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 1.  add_recipe.html
 
-    *   **ERROR:** The first child option element of a select element with a required attribute, and without a multiple attribute, and without a size attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content. Consider either adding a placeholder option label, or adding a size attribute with a value equal to the number of option elements.
+    *   **ERROR:** 
 
-        *   **Fix:** Added empty value attribute to the first child option element.
+        *   **Fix:** 
 
-    *   **ERROR:** The aria-describedby attribute must point to an element in the same document. 
+    *   **ERROR:** 
 
-        *   **Fix:** Updated the aria-describedby attribute to recipe_name to match for element in the label.
+        *   **Fix:** 
 
 
 1.  recipe_list.html
 
-    *   **ERROR:** Duplicate ID accordionExample.
-    *   **ERROR:** Duplicate ID headingOne.
-    *   **ERROR:** Duplicate ID collapseOne.
-    *   **ERROR:** Duplicate ID headingTwo.
-    *   **ERROR:** Duplicate ID collapseTwo.
-
-    These errors repeat depending on how many recipes are store in the data base. 
-    
-    **NOTE/FIX** The errors do not appear if you run the validation for 1 card that contain the accordians. The backend is creating more cards/recipes so is there for duplicating the IDs. 
-    
-    To fix the error an attempt was made to impliment a loop counter id to contatonate accordian variable to generate uniique IDs for each. Due to time constraints for this project resources could not be put into solving this. The user doesn't suffer greatly for this.
+    *   **ERROR:** 
 
 1.  add_recipe_type.html
 
-    *   **ERROR:** The aria-describedby attribute must point to an element in the same document.
+    *   **ERROR:** 
 
-        *   **Fix:** Updated the aria-describedby attribute to recipe_type to match for element in the label.
+        *   **Fix:** 
 
 
 ##### Python (app.py) 
 
-1.  Line 79	 col 5	continuation line with same indent as next logical line
+1.  
 
-    *   **Fix:** Indented lines 79-84 by one.
+    *   **Fix:** 
 
-1.  Line 182 line too long (86 > 79 characters)
+1.  
 
-    *   **Fix:** Put half the line indented on the next line
+    *   **Fix:** 
 
 Python errors fixed and is producing 0 errors.
 
@@ -313,55 +301,67 @@ JavaScript validations produced 0 errors.
 
 ##### First Time users
 
-*   As a First Time user, I want to view clear and concise content on mobile - Testing was performed to ensure there was no clusters of over information, well spaced and aesthically pleasing on tablet and mobile.
+*   As a First Time user, I want to view clear and concise content on mobile, tablet and desktop - Testing was performed to ensure there was no clusters of over information, well spaced and aesthically pleasing on tablet and mobile.
 
-*   As a First Time user, I want to learn and understand what the site offers - Testing was performed to verify enough information is uploaded to tell the user about what the site offers.
+*   As a First Time user, I want to learn and understand what the app offers - Testing was performed to verify enough information is provided to tell the user about what the app offers.
 
-*   As a First Time user, I want to find the registration page - Testing was performed to verify enough information is given to user about how to navigate to the regisration page.
+*   As a First Time user, I want to easily navigate to the store - Testing was performed on the SHOP NOW buttons, the search bar, and the beat and links to ensure they navigate the user to the store. 
 
-*   As a First Time user, I want to easily register a Cookbook account - Testing was performed on the registration form to verify that a user can register an account on this app.
+*   As a First Time user, I want to easily search through the beat genres - Testing was was performed on the genre dropdown functionality and the genre links within the dropdown menu to ensure the user can easily navigate to each genre.
 
-*   As a First Time user, I want to recieve an email that welcomes me and acknowledges that I have created an account - Testing was performed to verify that when a user create an account they recieve a personal email. (NOTE: Please see the EmailJS results in the Validation Results section above).
+*   As a First Time user, I want to search the store with key words - Testing was performed on the search bar by inputing key words and searching. The user is provided with beat options associated with the key word.
 
-*   As a First Time user, I want to add a recipe - Testing was performed on the recipe form input fields and the add recipe buttons to ensure a user can create a recipe.
+*   As a First Time user, I want to create an account - Testing was performed to test account creation. The user can easily create an account and receives a verify account email in order to verify their account securely.
 
-*   As a First Time user, I want to view the recipe on the recipes page - Testing was performed on the recipe cards and the accordian features within it to ensure the user can view their recipe.
+*   As a First Time user, I want to listen to different beats - Testing was performed on the audio files to ensure the user can listen to a beat befor they purchase it.
 
-*   As a First Time user, I want to view other user's recipes on the recipes page - Testing was performed on the recipe cards and the accordian features within them to ensure the user can view other user's recipes.
+*   As a First Time user, I want to add beat to my bag - Testing was performed on the the Add to bag button to ensure the user can successfully add a beat to their bag and view the contents of their. 
 
-*   As a First Time user, I want to be able to edit my recipes - Testing was performed on the user recipe cards on the Recipes page to ensure the edit button navigates the user to the Edit Recipe page. Testing was performed on all inputs and buttons in the edit recipe form function correctly so that the user can successfully update their recipe.
+*   As a First Time user, I want to easily adjust my bag by removing beats if I require - Testing was performed and the user can easily remove a beat from their bag in the Beat Bag page.
 
-*   As a First Time user, I want to be able to delete my recipes - Testing was performed on the user recipe cards on the Recipes page to ensure that when the Delete button is selected, a pop up appears to confirm that the user want to delete. If the user confirms deletion, testing was done to confirm that the recipe has been removed from the Recipes page.
+*   As a First Time user, I want to buy a buy using a credit card - Testing was performed and the user can purchase a product using their debit/credit card information.
 
-*   As a First Time user, I want to seemlessly navigate through the 6 pages of the site - Testing was performed on all navigation links to ensure the user can seemlessly navigate throughout the site.
+*   As a First Time user, I want to receive the beat(s) I bought in an email - Testing was performed and the user receive the download link(s) the beat(s) they purchased in the order confirmation email.
 
-*   As a First Time user, I want to easily connect with Cookbook's social platforms - Testing was performed on the socail icon links in the footer to ensure that the user is navigated to the chosen social media platform and that the link opens in a new tab to keep the user in the app allowing for seemless UX.
+*   As a First Time user, I want to seemlessly navigate through all pages of the site - Testing was performed on all navigation links to ensure the user can seemlessly navigate throughout the site.
 
-*   As a First Time user, I want to log out of my account - Testing was performed on the Log Out link in the Navigation bar to enusre that the user can successfully log out, that when the link is selected a pop up appear asking the user to confirm that they want to logout (as to avoid an unwanted log out), and the upon a successful logout, the user is redirected back to the log in page.
+*   As a First Time user, I want to easily connect with FOBs social platforms - Testing was performed on the social icon links in the footer to ensure that the user is navigated to the chosen social media platform and that the link opens in a new tab to keep the user in the app allowing for seemless UX.
+
+*   As a First Time user, I want to log out of my account - Testing was performed and the user can easily log out of their account. When selecting the logout option the user is brought to another page to verify that the user wants to log out.
+
+*   As a First Time user, I want to buy a beat(s) without having to create an account - Testing was performed and the user without a FOB account can purchase a beat and recieve the order confirmation email.
+
 
 ##### Returning Users
 
-*   As a Returning user, I want to easily use a recipe while cooking - Testing was performed on the accordian features in the recipe cards to ensure the cook using the app can easily open and close the ingredients and cooking instructions accordians individuallty, so the user doesn't have to scroll through all the ingredients to get to the cooking instructions or visa versa. 
+*   As a Returning user, I want to view my order history - Testing was performed and the app stores orders made made by the user. Tsting on the accordian dropdown was also performed to ensure the user can see the history on the My Profile page.
 
-*   As a Returning user, I want to easily add more recipes - Testing was performed to ensure a user can create and store as many recipes as they would like and that they all appear on the Recipes page.
+*   As a Returning user, I want to update my user information - Testing was performed and the user can succesfully update their user information and new information is saved on My Profile page.
 
-*   As a Returning user, I want to categorize all my recipes - Testing was performed on the choose category dropdown in the Add and Edit recipe forms to ensure a user can create and store as many recipes under a variety of categories.
+*   As a Returning user, I want to sort through the beat by genre A-Z or price (high-low) - Testing was performed and the user can sort through the beats as they wish. The sorting functionality works whether the user wants sorted alphabetically or by price.
 
-*   As a Returning user, I want to search for certain recipes on the recipes page - Testing was perfomred on the search bar and the search button to ensure the user can search the recipe list using keywords and that the user is informed if no matches are found for the users keywords.
+*   As a Returning user, I want to search for specific type of beat using the search tool - Testing was performed and the user can input descriptive words into the search bar and the app will provide options. If the user inputs a word incorrectly spelt or a word that is not referenced in the store, they will find no results.
 
-*   As a Returning user, I want to navigate back to the recipe page after finding a recipe using the search tool - Testing was performed on the reset button of the search tool so a user can easily navigate back the recipe page after using the search tool.
+*   As a Returning user, I want to navigate back to the beat store after adding a beat to my bag - 
+
+*   As a Returning user, I want to be able to generate a new password if I forgot my original one - Testing was performed and the user can create a new password if they can't login as they have forgotten there password. A change password link is sent to the email provided. Once they follow the steps they can successfully login using the new password.
+
 
 ##### Frequent Users
 
-*   As a Frequent user, I want to add, edit and delete as many of my recipes as I want - Testing was performed on the database and its capacity to (1) Store multiple recipes (2) handle recipe that are constantly being edited, updated, and deleted, so that the user has confidence that their data wont be lost and the app can handle their demand for manipulating a recipe when that want.
+*   As a Frequent user, I want to look through the store for new beats or genres - the testing above indicated that user can easily navigate through the site which allow frequent users to easily check for new beats and genres
 
-*   As a Frequent user, I want to use this app as my only cooking tool - Testing cannot be performed on this parameter as this can be subjective and some users may prefer other simailar apps. If we had the capacity, we could use analytics to measure rates of returning users and provide surveys to ask how users rate the app, is there other apps that they like too, etc.
-
-*   As a Frequent user, I want to search for new recipes other users have added over time - Continuous testing was performed on the search tool to ensure a user can easily search the recipe list using the search tool.
 
 ##### Admin User Goals
 
-*   As an admin user, I want to manage (add, edit and delete) the recipe categories - Testing was perfomred on the manage category pages to ensure the admin user can easily and quickly manage the recipe categories to meet the demand of the regular users.
+
+*   As an admin user, I want to manage (add, edit and delete) the beats on site - Testing was perfomred on the beat management pages to ensure the admin user can easily edit, add and delete beats.
+
+*   As an admin user, view entire order history from all users - using the admin/ django function the admin user can view all orders from all users.
+
+*   As an admin user, I want to view and manage user accounts that signed up to the site - using the admin/ django function the admin user create, delete, edit accouts. View existing users and their order history individually.
+
+*   As an admin user, I want to view all purchases via Stripe - using the the admin users stripe.com/developers account the admin user can view all payments that have gone through the site.
 
 
 #### Lighthouse Test Results
