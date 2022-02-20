@@ -208,7 +208,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 *   [Heroku](https://id.heroku.com/login) -  used to deploy app
 
-*   [AWS]() - Used the S3 bucket to host static and media files
+*   [AWS](https://aws.amazon.com/) - Used the S3 bucket to host static and media files
 
 *   [Bootstrap](https://getbootstrap.com/) - used throughout the site for layout, styling and components. 
 
@@ -490,14 +490,14 @@ The following commands were used throughout the project:
 
 *   [gitconnected](https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317) - used to help with creating error 404 page for html and python.
 
-*   [Handling Application Errors](https://flask.palletsprojects.com/en/2.0.x/errorhandling/) - used to help with creating error 500 page for html and python.
+*   [HCodePen Home Search Bar | CSS Tutorial Mike Dane](https://codepen.io/mikedane94/pen/wvowGgJ) - used as a guide to help style the search bar on the homepage.
 
-*   Tim Nelson a Tutor at Code Institute code in the Flash Framework and mini project lesson helped give my project a great base to work off.
+*   Chris Z. (@ckz8780) a Tutor at Code Institute code - all his django videos and tutorials make up the a lot of the structure and logic of this app. His [boutique_ado_v1](https://github.com/Code-Institute-Solutions/boutique_ado_v1.git) provided a lot of the structure and inspiration for this project.
 
 
 ### Content 
 
-The contents of this app was all created by Ciaran O'Brien.
+The contents of this app was all created by FOB and Ciaran O'Brien.
 
 ### Media 
 
@@ -509,10 +509,10 @@ I'd like to thank my mentor Spencer Barriball for his guidance, efficiency and p
 
 I'd like to thank mentor Daisy McGirr who kindly stepped in to take my final project review as Spencer was on holidays. I am so thankful for her help.
 
-Thank you to Tim Nelson a Tutor at Code Institute whose teaching techniques helped me understand how to build a full stack site using Django. A lot of this project's code structing and testing was sourced from Tim's amazing Mini Project and Flash Framework lessons.
+Thank you to Chris Z. (@ckz8780) a Tutor at Code Institute whose teaching techniques helped me understand how to build a full stack site using Django. A lot of this project's code structing and testing was sourced from his amazing Intro to Django and Boutique Ado videos/tutorials.
 
 Thanks to various Slack users for helping with issues I had throughout the journey.
 
-Thanks to tutors for stepping in when I was really stuck on a bug.
+Thanks to Code Institute tutors for stepping in when I was really stuck on a bug.
 
-Thank you to my tester friends Fionn and Ollie who allowed me to contsantly test my email functionality with their email addresses.
+Thank you to my tester friends Fionn and Ollie who allowed me to contsantly test my email and purchase functionality with their email addresses.
