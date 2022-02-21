@@ -57,6 +57,7 @@ body {
     padding: 0.5rem;
     border-radius: 0.5rem;
     color: black;
+    height: 65px;
 }
 
 .index-input {
@@ -65,7 +66,8 @@ body {
     border: none;
     outline: none;
     background: white;
-    color: white;
+    color: #212529;
+    height: 62px;
 }
 
 .index-icon {
@@ -74,10 +76,11 @@ body {
     background: white;
     border: none;
 	outline: none;
+    height: 62px;
 }
 
 ::placeholder {
-    color: #f0b2a8;
+    color: #212529;
   }
 
 
@@ -94,19 +97,39 @@ body {
     position: relative;
 }
 
-.jumbotron-main {
-    background-color: transparent;
-    padding-top: 43.75rem;
-    padding-bottom: 3.75rem;
-    margin-top: 0;
-    border-top-width: 3.125rem;
+.about-hr {
+    margin: auto;
+    color: #2f2027;
 }
 
-.main-header {
-    font-weight: bold;
-    color: floralwhite;
-    margin-bottom: 1.875rem;
+.spotify {
+    display: flex;
+    justify-content: center;
 }
+
+.shop-about {
+    display: flex;
+    justify-content: center;
+}
+
+.shop-about a {
+    color: #fdbcdd;
+    font-weight: 600;
+    background-color: #30202b;
+    border: none;
+}
+
+.main-shop a {
+    color: #30202b;
+    font-weight: 600;
+}
+
+.about-container p {
+    width: 80%;
+    margin: auto;
+}
+
+
 
 /*------------------------------------------------------------------------------------------------ footer --*/
 
