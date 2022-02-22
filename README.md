@@ -25,8 +25,8 @@ Fionn O'Brien (FOB) requested an app store to sell his beats. FOB requires a res
 *   As a First Time user, I want to listen to different beats.
 *   As a First Time user, I want to add beat to my bag.
 *   As a First Time user, I want to easily adjust my bag by removing beats if I require.
-*   As a First Time user, I want to buy a buy using a credit card.
-*   As a First Time user, I want to receive the beat(s) I bought in an email.
+*   As a First Time user, I want to buy a beat using a credit card.
+*   As a First Time user, I want to be able to download my beats once I have bought them.
 *   As a First Time user, I want to seemlessly navigate through all pages of the site.
 *   As a First Time user, I want to easily connect with FOBs social platforms.
 *   As a First Time user, I want to log out of my account.
@@ -70,7 +70,7 @@ Images and audio files were provided by and owned by my brother Fionn O'Brien (F
 
 #### Wireframes
 
-For complete wireframes see this [PDF](static/assets/img/wireframes/wireframes_milestone_3.pdf).
+For complete wireframes see this [PDF](static/img/wireframes_msp4).
 
 
 ### Limitations
@@ -141,7 +141,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 *   Checkout success page
 
     *   This page provides a thank you message to the user and confirms an email has been sent to the email address provided.
-    *   This page provides an order history tabe - order number, date, beats purchased and total cost, and an button aoption back to the beat store.
+    *   This page provides the beats bought in card form with a download link available so they download the file locally.
 
 *   Register Page
 
@@ -319,9 +319,9 @@ JavaScript validations produced 0 errors.
 
 *   As a First Time user, I want to easily adjust my bag by removing beats if I require - Testing was performed and the user can easily remove a beat from their bag in the Beat Bag page.
 
-*   As a First Time user, I want to buy a buy using a credit card - Testing was performed and the user can purchase a product using their debit/credit card information.
+*   As a First Time user, I want to buy a beat using a credit card - Testing was performed and the user can purchase a product using their debit/credit card information.
 
-*   As a First Time user, I want to receive the beat(s) I bought in an email - Testing was performed and the user receive the download link(s) the beat(s) they purchased in the order confirmation email.
+*   As a First Time user, I want to be able to dwonload my beats once I have bought them - Testing was performed and the user is presented with a download link(s) for the beat(s) they purchased in the order confirmation page.
 
 *   As a First Time user, I want to seemlessly navigate through all pages of the site - Testing was performed on all navigation links to ensure the user can seemlessly navigate throughout the site.
 
