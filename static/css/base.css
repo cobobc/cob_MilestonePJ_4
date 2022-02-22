@@ -264,6 +264,7 @@ body {
 
 .toast-capper {
     height: .125rem;
+    background-color: #0dcaf0;
 }
 
 .toast-header {
@@ -271,7 +272,7 @@ body {
     font-size: larger;
 }
 
-.toast-button{
+.toast-button {
     border: none;
     font-size: larger;
     background-color: #fff;

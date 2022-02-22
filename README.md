@@ -243,6 +243,8 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 1.  Run all python files through [PEP8 online](http://pep8online.com/)
 
+1.  Run tests on Stripe webhook handlers.
+
 1.  Run a lighthouse test for performance.
 
 
@@ -363,6 +365,25 @@ JavaScript validations produced 0 errors.
 
 *   As an admin user, I want to view all purchases via Stripe - using the the admin users stripe.com/developers account the admin user can view all payments that have gone through the site.
 
+
+#### Stripe Test
+
+*   Testing was performed to ensure payment events from the app were being logged as events in [Stripe](https://dashboard.stripe.com/test/developers). The image below shows payment events are being recorded in Stripe:
+
+    ![Stripe Events](static/img/testing/stripe_events.jpg)
+
+*   Testing was performed to ensure payment intents were being logged and print a 200 success post in [Stripe](https://dashboard.stripe.com/test/developers).
+    The image below shows payment intents are logged in Stripe with 200 status:
+
+    ![Stripe Logs](static/img/testing/stripe_logs.jpg)
+
+*   Testing was performed to ensure the weebhook endpoints were providing a 200 OK response for payment_intent.succeeded. The image below shows the testing was successful:
+
+    ![Stripe Webhooks](static/img/testing/stripe_webhooks.jpg)
+
+*   Testing was performed to ensure the app sent order confirmation of purchase emails to user. Testing was successful (image below) ensuring that user email info in settings.py, stripe keys, and the webhook handlers are running correctly.
+
+    ![Email Confirmation](static/img/testing/email_stripe.jpg)
 
 #### Lighthouse Test Results
 
