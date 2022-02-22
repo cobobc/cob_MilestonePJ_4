@@ -199,6 +199,7 @@ body {
     font-weight: 600;
 }
 
+
 .row {
     --bs-gutter-x: 0;
 }
@@ -343,6 +344,15 @@ body {
 .card-beat {
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
     border-radius: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.card-beat img {
+    width: 240px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .card-beat i {

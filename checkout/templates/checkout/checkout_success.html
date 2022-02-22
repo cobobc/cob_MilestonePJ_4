@@ -19,14 +19,7 @@
                         The total cost of your oder is €{{ order.grand_total }}. A confirmation email with all the details 
                         will be sent to <strong>{{ order.email }}</strong>.</p>
                 </div>
-                <div class="success-text">
-                    <p class="small text-danger mt-2">
-                        <span class="icon">
-                            <i class="fas fa-exclamation-circle"></i>
-                        </span>
-                        <span>Please ensure that you download your beats before leaving this page!</span>
-                    </p>
-                </div>
+                
             </div>
         </div>
 
@@ -35,7 +28,7 @@
             <div class="row beat-success">
                 {% for item in order.lineitems.all %}
                     <div class="card card-success" style="width: 20rem;">
-                        <div class="card-body card-beat">
+                        <div class="card-body card-beat mt-3 mb-3">
                             <div>
                                 <h5 class="card-title mb-3 mt-2"><strong>{{ item.beat.name }}</strong></h5>
                             </div>
@@ -58,6 +51,15 @@
 
 
         <hr class="mt-5 mb-4">
+
+        <div class="success-text">
+            <p class="small text-danger mt-2 mb-2">
+                <span class="icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </span>
+                <span>Please ensure that you download your beats before leaving this page!</span>
+            </p>
+        </div>
 
         <div class="row success-btn">
             <div class="col-12 col-lg-7 text-right mt-3 mb-5 success-return">
