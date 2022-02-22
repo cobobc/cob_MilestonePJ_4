@@ -4,9 +4,9 @@
 
 The purpose of this site is to complete the fourth Milestone Project for the Code Institute's Full Stack Developer course and can can be found [here](https://cob-milestonepj-4.herokuapp.com/).
 
-## Cookbook Website
+## FOB Beats App
 
-![Cookbook overview](static/assets/img/cookbook_app.png)
+![FOB Beats](static/assets/img/cookbook_app.png)
 
 Fionn O'Brien (FOB) requested an app store to sell his beats. FOB requires a responsive website that allows users to listen to his beats and buy them for their own musical purposes. Once the user buys a beat(s) they will receive it as a download link in the sale confirmation email. The app allows users to create a profile where they can view their order history. An administation superuser will allow FOB to manage the site on his own with the capacity to add, delete and edit beats to the store.
 
@@ -241,6 +241,8 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 1.  Run all .js files through the [JShint](https://jshint.com/) validator.
 
+1.  Run all .json files through the [JSONLint](https://jsonlint.com/) validator.
+
 1.  Run all python files through [PEP8 online](http://pep8online.com/)
 
 1.  Run tests on Stripe webhook handlers.
@@ -290,13 +292,24 @@ Python errors fixed and is producing 0 errors.
 
 ##### CSS
 
-The CSS validations produced 0 errors.
+The CSS validations produced 1 error in base.css:
 
-*   ![CSS Validation Result](static/assets/img/testing/CSS_validation_result.png)
+*   **ERROR** - ![Base CSS Validation Result](static/img/testing/basecss.jpg)
+
+    *   **Fix** - Removed the negative value and no errors were found.
+
+*   Checkout css result- ![Checkout CSS Validation Result](static/img/testing/checkout_css.jpg)
+
+*   0 errors for profile.css
+
 
 ##### JaveScript Files
 
 JavaScript validations produced 0 errors.
+
+##### JSON Files
+
+JSON validations produced 0 errors.
 
 
 #### User Goal Results
