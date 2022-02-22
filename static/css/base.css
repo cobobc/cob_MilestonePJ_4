@@ -313,8 +313,52 @@ body {
     font-size: larger;
 }
 
-/* ------------------------------------------------------------------------------------------------------- order info */
+/* ------------------------------------------------------------------------------------------------------- checkout success */
 
+.beat-success {
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.success-text {
+    display: flex;
+    justify-content: center;
+}
+
+.success-text p {
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.beat-success img {
+    border-radius: 15px;
+}
+
+.card {
+    border: none;
+}
+
+.card-beat {
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    border-radius: 20px;
+}
+
+.card-beat i {
+    font-size: 20px;
+    color: #bb3a93;
+}
+
+.success-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.success-return {
+    display: flex;
+    justify-content: center;
+}
 
 
 /* from Bulma */

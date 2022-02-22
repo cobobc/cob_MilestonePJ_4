@@ -14,72 +14,53 @@
         <div class="row">
             <div class="col">
                 <h2 class="logo-font mb-3 mt-5 manage-header">Thank You</h2>
-                <hr>
-                <p class="text-black">Thank you <strong>{{ order.full_name }}</strong>. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-lg-7">
-                <div class="order-confirmation-wrapper mt-3 mb-3">
-
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <p class="mb-0 font-weight-bold"><strong>Order Number</strong></p>
-                        </div>
-                        <div class="col-12 col-md-8 text-md-right">
-                            <p class="mb-0">{{ order.order_number }}</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <p class="mb-0"><strong>Date</strong></p>
-                        </div>
-                        <div class="col-12 col-md-8 text-md-right">
-                            <p class="mb-0">{{ order.date }}</p>
-                        </div>
-                    </div>
-
-                    {% for item in order.lineitems.all %}
-                    <div class="row">
-                        <div class="col">
-                            <p class="mb-0 font-weight-bold"><strong>Beats:</strong></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <p class="mb-0 text-black font-weight-bold">
-                                {{ item.beat.name }}
-                            </p>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <audio src="{{ item.beat.file.url }}" class="mb-0" controls></audio>
-                            <p>
-                                <a href="{{ item.beat.file.url }}" download="{{ item.beat.file.url }}">Download</a>
-                            </p>
-                        </div>
-                        <div class="col-12 col-md-8 text-md-right">
-                            <p class="small mb-0">€{{ item.beat.price }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-
-                    
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <p class="mb-0 font-weight-bold"><strong>Total</strong></p>
-                        </div>
-                        <div class="col-12 col-md-8 text-md-right">
-                            <p class="mb-0">{{ order.grand_total }}</p>
-                        </div>
-                    </div>
+                <div class="success-text">
+                    <p class="text-black mt-4">Thank you <strong>{{ order.full_name }}</strong>.<br><br>
+                        The total cost of your oder is €{{ order.grand_total }}. A confirmation email with all the details 
+                        will be sent to <strong>{{ order.email }}</strong>.</p>
+                </div>
+                <div class="success-text">
+                    <p class="small text-danger mt-2">
+                        <span class="icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </span>
+                        <span>Please ensure that you download your beats before leaving this page!</span>
+                    </p>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 col-lg-7 text-right mt-3 mb-5">
+        <hr class="mt-4 mb-5">
+
+            <div class="row beat-success">
+                {% for item in order.lineitems.all %}
+                    <div class="card card-success" style="width: 20rem;">
+                        <div class="card-body card-beat">
+                            <div>
+                                <h5 class="card-title mb-3 mt-2"><strong>{{ item.beat.name }}</strong></h5>
+                            </div>
+                            <div>
+                                {% if item.beat.image %}
+                                <img class="w-100" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
+                                {% else %}
+                                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.beat.name }}">
+                                {% endif %}
+                            </div>
+                            <div class="mt-4">
+                                <a href="{{ item.beat.file.url }}" download="{{ item.beat.file.url }}">
+                                    <i class="fas fa-solid fa-download"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+        <hr class="mt-5 mb-4">
+
+        <div class="row success-btn">
+            <div class="col-12 col-lg-7 text-right mt-3 mb-5 success-return">
                 {% if from_profile %}
                     <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
                         <span class="icon mr-2">
@@ -88,7 +69,8 @@
                         <span class="text-uppercase">Back to Profile</span>
                     </a>
                 {% else %}
-				<a href="{% url 'beats' %}?genre=dance,hip_hop,pop,rnb,piano_instrumentals" class="btn btn-black rounded-3 my-2">
+				<a href="{% url 'beats' %}" class="btn btn-black rounded-3 my-2"
+                    onclick="if (!confirm('Please ensure you have downloaded your beats before leaving this page!')) { return false }">
 					<span class="text-uppercase"><i class="fas fa-chevron-left"></i> back to the beats</span>
 				</a>
                 {% endif %}
