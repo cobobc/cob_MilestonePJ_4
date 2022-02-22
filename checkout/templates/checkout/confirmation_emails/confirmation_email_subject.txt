@@ -1,1 +1,1 @@
-FOB Beats Confirmation for Beat Name - {{ item.beat.name }}
+FOB Beats Confirmation of Purchase

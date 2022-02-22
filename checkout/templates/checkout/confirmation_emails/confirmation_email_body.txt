@@ -2,13 +2,11 @@ Hello {{ order.full_name }}!
 
 This is a confirmation of your order at FOB Beats.
 
-Your can download your beat file <a href="{{ item.beat.file.url }}" download="{{ item.beat.file.url }}">here</a>.
 
 Order Number: {{ order.order_number }}
-Beat name: {{ {{ item.beat.name }} }}
 Order Date: {{ order.date }}
 Grand Total: ${{ order.grand_total }}
 
-If you have any questions, feel free to contact us at {{ contact_email }}.
+If you have any issue with your downloads, contact us at {{ contact_email }} with your order number referenced and we will send you a new download link.
 
 FOB out!
