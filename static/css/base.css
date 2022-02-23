@@ -254,7 +254,7 @@ body {
 .message-container {
     position: fixed;
     top: 4.5rem;
-    right: .938rem;
+    right: .738rem;
     max-height: 250px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -363,7 +363,7 @@ body {
 }
 
 .card-beat {
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) 6px 2px 16px 0px;
+    box-shadow: #6ca3af 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) 6px 2px 16px 0px;
     border-radius: 1.25rem;
     margin-left: .938rem;
     margin-right: .938rem;
