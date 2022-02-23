@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         {% for item in bag_items %}
-                            <div class="row">
+                            <div class="row bag-img">
                                 <div class="col-12 col-sm-6 mb-2">
                                     {% if item.beat.image %}
                                     <img class="w-100 rounded-3" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
@@ -77,32 +77,29 @@
                             <thead class="text-black tex">
                                 <tr>
                                     <th scope="col"><strong>{{ item.beat.name }}</strong></th>
-                                    <th scope="col">Audio</th>
+                                    <th scope="col" style="padding-left: 20px;">Audio</th>
                                     <th scope="col">Price</th>
                                 </tr>
                             </thead>
 
                             
                                 <tr>
-                                    <td class="mt-2 w-25">
+                                    <td class="mt-2 pb-3 w-25 card-beat">
                                         {% if item.beat.image %}
                                         <img class="w-100 rounded-3" src="{{ item.beat.image.url }}" alt="{{ item.beat.name }}">
                                         {% else %}
                                         <img class="w-100 rounded-3" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.beat.name }}">
                                         {% endif %}
                                     </td>
-                                    <td class="py-3">
-                                        <div class="col-12 col-sm-6 mb-2">
-                                            <audio src="{{ item.beat.file.url }}" class="mb-0" controls controlsList="nodownload"></audio>
-                                        </div>
+                                    <td class="py-3" style="padding-left: 20px;">
+                                            <div class="col-12 col-sm-6 mb-2">
+                                                <audio src="{{ item.beat.file.url }}" class="mb-0" controls controlsList="nodownload"></audio>
+                                            </div>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">€{{ item.beat.price }}   <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a></p>
                                     </td>
-                                    <td class="py-3 w-25">
-                                        
-                                        
-                                    </td>
+                                    
                                 </tr>
                             {% endfor %}
                             <tr>

@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 {% for item in bag_items %}
-                    <div class="row">
+                    <div class="row checkout-img">
                         <div class="col-2 mb-2">
                             <a href="{% url 'beat_detail' item.beat.id %}">
                                 {% if item.beat.image %}

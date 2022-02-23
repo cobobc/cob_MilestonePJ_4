@@ -255,15 +255,22 @@ body {
     position: fixed;
     top: 4.5rem;
     right: .938rem;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 300px;
     z-index: 99999999999;
+    border-radius: .625rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .custom-toast {
     overflow: visible;
+    border-radius: .625rem;
 }
 
 .toast-capper {
-    height: .125rem;
+    height: .148rem;
     background-color: #0dcaf0;
 }
 
@@ -283,17 +290,22 @@ body {
     background-color: #fff;
 }
 
-.toast-img {
+.checkout-img {
     display: flex;
     justify-content: left;
     border-radius: .625rem;
 }
 
-.toast-img img {
+.checkout-img img {
     width: 15rem;
     height: 3.75rem;
     object-fit: cover;
     border-radius: .313rem;
+}
+
+.toast-bag {
+    display: flex;
+    justify-content: center;
 }
 
 /* ---------------------------------------------------------------------------------------------- add beat */
@@ -378,6 +390,15 @@ body {
 .success-return {
     display: flex;
     justify-content: center;
+}
+
+/*--------------------------------------------------------------beat bag-*/
+
+.bag-img img {
+    width: 15rem;
+    height: 12.5rem;
+    object-fit: cover;
+    border-radius: .625rem;
 }
 
 /*---------------------------------------------------------------*/

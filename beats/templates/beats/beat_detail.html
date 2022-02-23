@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-5 mb-4">
-                <h2 class="page_headers">{{ beat.name }}</h2>
+                <h2 class="page_headers"><strong>{{ beat.name }}</strong></h2>
             </div>
         </div>
         <div class="row">
@@ -75,13 +75,13 @@
                             </div>
                         </div>
                         <div>
-                            <a href="{% url 'beats' %}" class="btn btn-secondary btn-lg">
+                            <a href="{% url 'beats' %}" class="btn btn-secondary">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">More beats</span>
                             </a>
-                            <input type="submit" class="btn btn-primary btn-lg text-uppercase add-bag-btt" value="Add to Bag">
+                            <input type="submit" class="btn btn-primary text-uppercase add-bag-btt" value="Add to Bag">
                         
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
