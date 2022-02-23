@@ -21,6 +21,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='beat',
             name='file',
-            field=models.FileField(blank=True, null=True, upload_to='media/audio/'),
+            field=models.FileField(
+                blank=True, null=True, upload_to='media/audio/'),
         ),
     ]

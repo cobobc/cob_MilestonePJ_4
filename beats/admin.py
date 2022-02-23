@@ -3,6 +3,7 @@ from .models import Beat, Genre
 
 # Register your models here.
 
+
 class BeatAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -14,11 +15,13 @@ class BeatAdmin(admin.ModelAdmin):
 
     ordering = ('name',)
 
+
 class GenreAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
     )
+
 
 admin.site.register(Beat, BeatAdmin)
 admin.site.register(Genre, GenreAdmin)

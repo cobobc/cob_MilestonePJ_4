@@ -294,11 +294,15 @@ Python errors fixed and is producing 0 errors.
 
 The CSS validations produced 1 error in base.css:
 
-*   **ERROR** - ![Base CSS Validation Result](static/img/testing/basecss.jpg)
+*   **ERROR**
+
+    ![Base CSS Validation Result](static/img/testing/basecss.jpg)
 
     *   **Fix** - Removed the negative value and no errors were found.
 
-*   Checkout css result- ![Checkout CSS Validation Result](static/img/testing/checkout_css.jpg)
+*   Checkout css result
+
+    ![Checkout CSS Validation Result](static/img/testing/checkout_css.jpg)
 
 *   0 errors for profile.css
 

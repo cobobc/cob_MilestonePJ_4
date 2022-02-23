@@ -26,6 +26,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='userprofile',
             name='user',
-            field=models.OneToOneField(default='', on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            field=models.OneToOneField(
+                default='', on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL),
         ),
     ]

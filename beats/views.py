@@ -9,6 +9,7 @@ from .forms import BeatForm
 
 # Create your views here.
 
+
 def all_beats(request):
     """ A view to show all beats, including sorting and search queries """
 
@@ -43,10 +44,12 @@ def all_beats(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('beats'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             beats = beats.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -76,17 +79,21 @@ def beat_detail(request, beat_id):
 def add_beat(request):
     """ Add a beat to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(
+            request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = BeatForm(request.POST, request.FILES)
         if form.is_valid():
             beat = form.save()
-            messages.success(request, 'Successfully added a new beat to the store!')
-            return redirect(reverse('beat_detail', args=[beat.id]))
+            messages.success(
+                request, 'Successfully added a new beat to the store!')
+            return redirect(
+                reverse('beat_detail', args=[beat.id]))
         else:
-            messages.error(request, 'Failed to add beat. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to add beat. Please ensure the form is valid.')
     else:
         form = BeatForm()
         
@@ -110,10 +117,12 @@ def edit_beat(request, beat_id):
         form = BeatForm(request.POST, request.FILES, instance=beat)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated beat!')
+            messages.success(
+                request, 'Successfully updated beat!')
             return redirect(reverse('beat_detail', args=[beat.id]))
         else:
-            messages.error(request, 'Failed to update beat. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to update beat. Please ensure the form is valid.')
     else:
         form = BeatForm(instance=beat)
         messages.info(request, f'You are editing {beat.name}')

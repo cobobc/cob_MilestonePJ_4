@@ -7,31 +7,32 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container">
-        <div class="row manage-header mt-3">
-            <div class="col-12 col-md-6">
-                <h2 class="logo-font page_headers">Beat Management</h2>
-                <h5 class="mb-3">Add a new Beat</h5>
+        <div class="container">
+            <div class="row manage-header mt-3">
+                <div class="col-12 col-md-6">
+                    <h2 class="logo-font page_headers">Beat Management</h2>
+                    <h5 class="mb-3">Add a new Beat</h5>
+                </div>
             </div>
-        </div>
 
-        <div class="row manage-form">
-            <div class="col-12 col-md-6 mt-3">
-                <form method="POST" action="{% url 'add_beat' %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
-                    <div class="text-right mb-4">
-                        <a class="btn btn-secondary rounded-2" href="{% url 'beats' %}">Cancel</a>
-                        <button class="btn btn-primary add-bag-btt rounded-2" type="submit">Add Beat</button>
-                    </div>
-                </form>
-            </div>       
+            <div class="row manage-form">
+                <div class="col-12 col-md-6 mt-3">
+                    <form method="POST" action="{% url 'add_beat' %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            {% if field.name != 'image' %}
+                                {{ field | as_crispy_field }}
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                        <div class="text-right mb-4">
+                            <a class="btn btn-secondary rounded-2" href="{% url 'beats' %}">Cancel</a>
+                            <button class="btn btn-primary add-bag-btt rounded-2" type="submit">Add Beat</button>
+                        </div>
+                    </form>
+                </div>       
+        </div>
     </div>
     
 {% endblock %}

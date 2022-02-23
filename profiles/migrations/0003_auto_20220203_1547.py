@@ -16,16 +16,20 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='userprofile',
             name='default_email',
-            field=models.EmailField(blank=True, default='', max_length=254, null=True),
+            field=models.EmailField(
+                blank=True, default='', max_length=254, null=True),
         ),
         migrations.AlterField(
             model_name='userprofile',
             name='default_full_name',
-            field=models.CharField(blank=True, default='', max_length=50, null=True),
+            field=models.CharField(
+                blank=True, default='', max_length=50, null=True),
         ),
         migrations.AlterField(
             model_name='userprofile',
             name='user',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            field=models.OneToOneField(
+                on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL),
         ),
     ]
