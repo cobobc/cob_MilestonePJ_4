@@ -65,7 +65,7 @@ def checkout(request):
 
                 except Beat.DoesNotExist:
                     messages.error(request, (
-                        "One of the beats in your bag wasn't found in our database. "
+                        "A beat in your bag wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()

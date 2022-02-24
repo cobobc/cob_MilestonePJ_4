@@ -100,11 +100,16 @@ body {
 .about-hr {
     margin: auto;
     color: #2f2027;
+    width: 80%;
 }
 
 .spotify {
     display: flex;
     justify-content: center;
+}
+
+.spotify iframe{
+    width: 75%;
 }
 
 .shop-about {
@@ -221,6 +226,7 @@ body {
 .audio-detail {
     display: flex;
     justify-content: center;
+    width: 90%;
 }
 
 .beat-info {

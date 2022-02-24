@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='Order',
             fields=[
                 ('id', models.BigAutoField(
-                    auto_created=True, primary_key=True, 
+                    auto_created=True, primary_key=True,
                     serialize=False, verbose_name='ID')),
                 ('order_number', models.CharField(
                     editable=False, max_length=32)),
@@ -40,16 +40,16 @@ class Migration(migrations.Migration):
             name='OrderLineItem',
             fields=[
                 ('id', models.BigAutoField(
-                    auto_created=True, primary_key=True, 
+                    auto_created=True, primary_key=True,
                     serialize=False, verbose_name='ID')),
                 ('quantity', models.IntegerField(default=0)),
                 ('lineitem_total', models.DecimalField(
                     decimal_places=2, editable=False, max_digits=6)),
                 ('beat', models.ForeignKey(
-                    on_delete=django.db.models.deletion.CASCADE, 
+                    on_delete=django.db.models.deletion.CASCADE,
                     to='beats.beat')),
                 ('order', models.ForeignKey(
-                    on_delete=django.db.models.deletion.CASCADE, 
+                    on_delete=django.db.models.deletion.CASCADE,
                     related_name='lineitems', to='checkout.order')),
             ],
         ),

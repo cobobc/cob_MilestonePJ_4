@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
             name='Beat',
             fields=[
                 ('id', models.BigAutoField(
-                    auto_created=True, primary_key=True, 
+                    auto_created=True, primary_key=True,
                  serialize=False, verbose_name='ID')),
                 ('sku', models.CharField(
                     blank=True, max_length=254, null=True)),
@@ -39,8 +39,8 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(
                     blank=True, null=True, upload_to='')),
                 ('genre', models.ForeignKey(
-                    blank=True, null=True, 
-                 on_delete=django.db.models.deletion.SET_NULL, 
+                    blank=True, null=True,
+                 on_delete=django.db.models.deletion.SET_NULL,
                  to='beats.genre')),
             ],
         ),

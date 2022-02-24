@@ -33,7 +33,6 @@ class Order(models.Model):
         """
         return uuid.uuid4().hex.upper()
 
-
     def update_total(self):
         """
         Update grand total each time a line item is added,
@@ -44,7 +43,6 @@ class Order(models.Model):
         self.grand_total = self.order_total
         self.save()
 
- 
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the order number
@@ -53,7 +51,6 @@ class Order(models.Model):
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
-
 
     def __str__(self):
         return self.order_number
@@ -70,7 +67,6 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False,
         blank=False, editable=False)
-
 
     def save(self, *args, **kwargs):
         """

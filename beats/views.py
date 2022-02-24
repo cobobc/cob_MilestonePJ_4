@@ -93,10 +93,11 @@ def add_beat(request):
                 reverse('beat_detail', args=[beat.id]))
         else:
             messages.error(
-                request, 'Failed to add beat. Please ensure the form is valid.')
+                request, 'Failed to add beat. Please ensure the form is valid.'
+                )
     else:
         form = BeatForm()
-        
+
     template = 'beats/add_beat.html'
     context = {
         'form': form,
@@ -122,7 +123,7 @@ def edit_beat(request, beat_id):
             return redirect(reverse('beat_detail', args=[beat.id]))
         else:
             messages.error(
-                request, 'Failed to update beat. Please ensure the form is valid.')
+                request, 'Failed to update beat. Please check the form.')
     else:
         form = BeatForm(instance=beat)
         messages.info(request, f'You are editing {beat.name}')
@@ -142,7 +143,7 @@ def delete_beat(request, beat_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     beat = get_object_or_404(Beat, pk=beat_id)
     beat.delete()
     messages.success(request, 'Beat deleted!')

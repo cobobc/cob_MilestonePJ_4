@@ -16,8 +16,8 @@ class Migration(migrations.Migration):
             model_name='order',
             name='user_profile',
             field=models.ForeignKey(
-                blank=True, null=True, 
-                on_delete=django.db.models.deletion.SET_NULL, 
+                blank=True, null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
                 related_name='orders', to='profiles.userprofile'),
         ),
     ]

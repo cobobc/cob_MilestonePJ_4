@@ -528,6 +528,8 @@ The following commands were used throughout the project:
 
 *   [gitconnected](https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317) - used to help with creating error 404 page for html and python.
 
+*   [Beautiful CSS box-shadow examples](https://getcssscan.com/css-box-shadow-examples) - used to help style cards with box shadows
+
 *   [HCodePen Home Search Bar | CSS Tutorial Mike Dane](https://codepen.io/mikedane94/pen/wvowGgJ) - used as a guide to help style the search bar on the homepage.
 
 *   Chris Z. (@ckz8780) a Tutor at Code Institute code - all his django videos and tutorials make up the a lot of the structure and logic of this app. His [boutique_ado_v1](https://github.com/Code-Institute-Solutions/boutique_ado_v1.git) provided a lot of the structure and inspiration for this project.
