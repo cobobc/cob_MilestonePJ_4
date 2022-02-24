@@ -1,5 +1,4 @@
 from django import forms
-from .widgets import CustomClearableFileInput
 from .models import Beat, Genre
 
 
@@ -9,8 +8,11 @@ class BeatForm(forms.ModelForm):
         model = Beat
         fields = '__all__'
 
+    file = forms.FileField(
+        label='File', required=True)
+
     image = forms.ImageField(
-        label='Image', required=False, widget=CustomClearableFileInput)
+        label='Image', required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
