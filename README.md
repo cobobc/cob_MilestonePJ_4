@@ -313,7 +313,8 @@ The features throughout the site are mininal text, larger text and clear buttons
 
     *   **ERROR:** lines 142, 145, 148, 151 are too long
 
-    *   **Fix:** 
+    *   **Fix:** `'NAME': 'django.contrib.auth.password_validation.'
+                    'UserAttributeSimilarityValidator',`
 
 Python errors fixed and is producing 0 errors.
 
