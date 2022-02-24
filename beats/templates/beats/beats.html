@@ -12,11 +12,9 @@
         <div class="col text-center mt-3">
             <h2 class="logo-font page_headers">Beats</h2>
             {% for c in current_genres %}
-                <button class="beat-genre-btt text-uppercase">
-                    <a href="{% url 'beats' %}?genre={{ c.name }}">
+                    <a href="{% url 'beats' %}?genre={{ c.name }}" class="btn btn-primary beat-genre-btt text-uppercase">
                         {{ c.friendly_name }}
                     </a>
-                </button>
             {% endfor %}
         </div>
     </div>
@@ -59,7 +57,7 @@
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ beat.name }}">
                                 </a>
                             {% endif %}
-                                <div class="card-body audio-detail">
+                                <div class="card-body audio-beat">
                                     <audio src="{{ beat.file.url }}" class="mb-0" controls controlsList="nodownload"></audio>
                                 </div>
                                 <div class="card-body pb-0">
@@ -75,11 +73,9 @@
                                     </div>
                                 </div>
                             {% if beat.genre %}
-                                <button class="btn btn-primary beat-genre-btt text-uppercase">
-                                    <a href="{% url 'beats' %}?genre={{ beat.genre.name }}">
+                                    <a href="{% url 'beats' %}?genre={{ beat.genre.name }}" class="btn btn-primary beat-genre-btt text-uppercase">
                                         {{ beat.genre.friendly_name }}
                                     </a>
-                                </button>
                             {% endif %}
                             {% if request.user.is_superuser %}
                                 <small class="mb-3">

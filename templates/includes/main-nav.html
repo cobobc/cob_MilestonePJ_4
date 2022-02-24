@@ -1,7 +1,11 @@
 <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ms-auto py-4 py-lg-0">
+        <li>
             <a href="{% url 'home' %}" class="logo-font font-weight-bold nav-link mr-5">Home</a>
+        </li>
+        <li>
             <a href="{% url 'beats' %}" class="logo-font font-weight-bold nav-link mr-5">All Beats</a>
+        </li>
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="genre-link" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,8 +38,8 @@
                 {% endif %}
             </div>
         </li>
-        <a href="{% url 'view_bag' %}" class="logo-font font-weight-bold nav-link mr-5">Beat Bag</a>
-        
-        
+        <li>
+            <a href="{% url 'view_bag' %}" class="logo-font font-weight-bold nav-link mr-5">Beat Bag</a>
+        </li>
     </ul>
 </div>

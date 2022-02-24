@@ -19,6 +19,7 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
+                    <!------------------------------------------------------------------------------------------ Grid layout for mobile and tablet -->
                     <div class="d-block d-md-none">
                         <div class="row">
                             <div class="col">
@@ -71,6 +72,7 @@
                             </a>	
                         </div>
                     </div>    
+                    <!------------------------------------------------------------------------------------------ Table layout for Desktop -->
                     <div class="table-responsive rounded d-none d-md-block">
                         <table class="table table-sm table-borderless">
                             {% for item in bag_items %}
@@ -81,8 +83,6 @@
                                     <th scope="col">Price</th>
                                 </tr>
                             </thead>
-
-                            
                                 <tr>
                                     <td class="mt-2 pb-3 w-25 card-beat">
                                         {% if item.beat.image %}
@@ -99,30 +99,29 @@
                                     <td class="py-3">
                                         <p class="my-0">€{{ item.beat.price }}   <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a></p>
                                     </td>
-                                    
                                 </tr>
                             {% endfor %}
-                            <tr>
-                                <td colspan="5" class="pt-5 text-right">
-                                    <h5 class="mt-4"><strong>Total: €{{ grand_total|floatformat:2 }}</strong></h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="5" class="text-right">
-                                    <a href="{% url 'beats' %}" class="btn btn-outline-black">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">More beats</span>
-                                    </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black">
-                                        <span class="text-uppercase">Checkout</span>
-                                        <span class="icon">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="pt-5 text-right">
+                                        <h5 class="mt-4"><strong>Total: €{{ grand_total|floatformat:2 }}</strong></h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">
+                                        <a href="{% url 'beats' %}" class="btn btn-outline-black">
+                                            <span class="icon">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </span>
+                                            <span class="text-uppercase">More beats</span>
+                                        </a>
+                                        <a href="{% url 'checkout' %}" class="btn btn-black">
+                                            <span class="text-uppercase">Checkout</span>
+                                            <span class="icon">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
                         </table>
                     </div>
                 {% else %}

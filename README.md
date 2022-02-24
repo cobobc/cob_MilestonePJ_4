@@ -40,10 +40,12 @@ Fionn O'Brien (FOB) requested an app store to sell his beats. FOB requires a res
 *   As a Returning user, I want to search for specific type of beat using the search tool.
 *   As a Returning user, I want to navigate back to the beat store after adding a beat to my bag.
 *   As a Returning user, I want to be able to generate a new password if I forgot my original one.
+*   As a Returning user, I want to contact FOB via a contact form.
 
 #### Frequent User Goals
 
 *   As a Frequent user, I want to look through the store for new beats or genres.
+*   As a Frequent user, I want to add more reviews and read other reviews about beats.
 
 #### Admin User Goals
 
@@ -256,27 +258,48 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 ##### HTML Files
 
-1.  add_recipe.html
+1.  main-nav.html
+
+    *   **ERROR:** Error: Element **a** not allowed as child of element **ul** in this context. (Suppressing further errors from this subtree.) Line: 56, 57, 87 
+
+        *   **Fix:** Put each <a> inside an <li>
 
     *   **ERROR:** 
 
         *   **Fix:** 
 
-    *   **ERROR:** 
+
+1.  beats.html, beat-detail.html, bag.html
+
+    *   **ERROR:** Attribute controlslist not allowed on element audio at this point.
+
+        * **Fix/Note** 
+        
+        *   The following two links were used as background information for this issue and decision - [Link 1](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-controlslist) and [Link](https://webmasters.stackexchange.com/questions/132621/w3c-validator-attribute-controlslist-not-allowed-on-element-audio-at-this-p).
+
+        *   Link 1 lists controlist as an attribute that can be used and link 2 acknowledges the that although its not in the current official HTML5 standard, it is a functioning experimental attribute.
+
+        *   For the purposes of this project, no controllist attribute would allow the user to download the beats without paying money. A criteria for this project is to have no html validation errors, so there were two options. Leaving the controlist in was chosen as it is (1) functioning correctly and (2) it would defeat the purpose of an e-commerce site to allow the user to take the beat for free. But the error is acknowledged.
+
+1.  add_beat.html
+
+    *   **ERROR:** Duplicate attribute id. At line 366, column 115
 
         *   **Fix:** 
 
+1.  bag.html 
 
-1.  recipe_list.html
+    *   **ERROR:** Table columns in range 4…5 established by element td have no cells beginning in them.
 
-    *   **ERROR:** 
+        *   **Fix:** Removed colspan from attributes
 
-1.  add_recipe_type.html
 
-    *   **ERROR:** 
+1.  bag.html 
 
-        *   **Fix:** 
+    *   **ERROR:** Duplicate ID remove_3.
 
+        *   **Fix/Note:** This page is structured so that large table displays for desktop and the structure changes to a grid design for tablet and mobile. It is for this reason there is duplicate IDs. The content within the structure is duplicated in order to pass the same info the user on all device types. An effort was made to hide remove buttons using bootsrap (d-none) to avoid the code being rendered to the DOM when on large screen. This effort was ineffective.
+ 
 
 ##### Python (app.py) 
 

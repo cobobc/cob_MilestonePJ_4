@@ -40,11 +40,9 @@
                     </div>
                     {% if beat.genre %}
                     <div class="genre-btn">
-                        <button class="btn btn-primary beat-genre-btt">
-                            <a href="{% url 'beats' %}?genre={{ beat.genre.name }}" class="text-uppercase">
+                            <a href="{% url 'beats' %}?genre={{ beat.genre.name }}" class="btn btn-primary beat-genre-btt text-uppercase">
                                 {{ beat.genre.friendly_name }}
                             </a>
-                        </button>
                     </div>
                     {% endif %}
                     {% if request.user.is_superuser %}

@@ -223,10 +223,15 @@ body {
     border-radius: .625rem;
 }
 
-.audio-detail {
+.audio-beat {
     display: flex;
     justify-content: center;
     width: 90%;
+}
+
+.audio-detail {
+    display: flex;
+    justify-content: center;
 }
 
 .beat-info {
