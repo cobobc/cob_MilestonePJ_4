@@ -467,6 +467,7 @@ The following commands were used throughout the project:
 *   `git add .` - This command was used to add files to the staging area before commiting.
 *   `git commit` - This command was used to to commit changes to the local repository.
 *   `git push` - This command is used to push all commited changes to the GitHub repository.
+*   `python3 manage.py startapp (app name)` - to create new apps in the site
 *   `python3 manage.py runserver` - run the site locally
 *   `python3 manage.py migrate` - migrate newly installed applications
 *   `python3 manage.py loaddata` - load beat and genre data
