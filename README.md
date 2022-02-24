@@ -393,6 +393,8 @@ JSON validations produced 0 errors.
 
 *   As a Returning user, I want to be able to generate a new password if I forgot my original one - Testing was performed and the user can create a new password if they can't login as they have forgotten there password. A change password link is sent to the email provided. Once they follow the steps they can successfully login using the new password.
 
+*   *   As a Returning user, I want to contact FOB via a contact form - Successful testing ensured that when a user submits a contact form the information is sent to the admin database.
+
 
 ##### Frequent Users
 
