@@ -264,12 +264,8 @@ The features throughout the site are mininal text, larger text and clear buttons
 
         *   **Fix:** Put each <a> inside an <li>
 
-    *   **ERROR:** 
-
-        *   **Fix:** 
-
-
-1.  beats.html, beat-detail.html, bag.html
+   
+1.  beats, beat-detail & bag.html
 
     *   **ERROR:** Attribute controlslist not allowed on element audio at this point.
 
@@ -285,7 +281,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
     *   **ERROR:** Duplicate attribute id. At line 366, column 115
 
-        *   **Fix:** 
+        *   **Fix:** Custom widget.py (CustomClearableFileInput) was creating an image id hence duplicating the ids. The widget functionality was deleted an entirely and the form was returned to its base function and styling. THe error was fixed.
 
 1.  bag.html 
 
@@ -303,11 +299,19 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 ##### Python (app.py) 
 
-1.  
+1.  webhook_handler.py
 
-    *   **Fix:** 
+    *   **ERROR:** lines 63 & 64 - missing whitespace around operator e.g., `profile.default_full_name=billing_details.name,`
 
-1.  
+    *   **Fix:** Added a space before and after the = sign on these lines
+
+    *   **ERROR:** lines 87 & 118 - lines are too long
+
+    *   **Fix:** Added a \ to break the lines into 2 smaller lines
+
+1.  settings.py
+
+    *   **ERROR:** lines 142, 145, 148, 151 are too long
 
     *   **Fix:** 
 
