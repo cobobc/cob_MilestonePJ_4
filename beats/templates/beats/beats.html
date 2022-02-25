@@ -73,10 +73,16 @@
                                     </div>
                                 </div>
                             {% if beat.genre %}
-                                    <a href="{% url 'beats' %}?genre={{ beat.genre.name }}" class="btn btn-primary beat-genre-btt text-uppercase">
+                                    <a href="{% url 'beats' %}?genre={{ beat.genre.name }}" class="btn btn-primary btn-sm beat-genre-btt">
                                         {{ beat.genre.friendly_name }}
                                     </a>
                             {% endif %}
+                            <div class="mb-3">
+                                <a href="{% url 'beat_detail' beat.id %}" class="btn btn-success">
+                                    Go to beat <small>
+                                        <i class="fas fa-chevron-right"></i></small>
+                                </a>
+                            </div>
                             {% if request.user.is_superuser %}
                                 <small class="mb-3">
                                     <a href="{% url 'edit_beat' beat.id %}">Edit</a> | 
