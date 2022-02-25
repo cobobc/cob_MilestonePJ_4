@@ -176,3 +176,31 @@ def add_review(request, beat_id):
     return redirect(reverse('beat_detail', args=[beat_id]))
 
 
+def edit_review(request, beat_id):
+    """ Edit a review """
+    beat = get_object_or_404(Beat, pk=beat_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.beat = beat
+            form.user = request.user
+            form.save()
+            messages.success(
+                request, 'Successfully updated your review!')
+            return redirect(reverse('beat_detail', args=[beat_id]))
+        else:
+            messages.error(
+                request, 'Failed to update review. \
+                    Please check review details.')
+
+    return redirect(reverse('beat_detail', args=[beat_id]))
+
+
+def delete_review(request, beat_id):
+    """ Delete a review """
+
+    review = get_object_or_404(Review, pk=beat_id)
+    review.delete()
+    messages.success(request, 'Review deleted!')
+    return redirect(reverse('beat_detail', args=[beat_id]))
