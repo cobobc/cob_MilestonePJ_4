@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Beat, Genre
-from .forms import BeatForm
+from .models import Beat, Genre, Review
+from .forms import BeatForm, ReviewForm
 
 # Create your views here.
 
@@ -67,9 +67,13 @@ def beat_detail(request, beat_id):
     """ A view to show individual beat details """
 
     beat = get_object_or_404(Beat, pk=beat_id)
+    form = ReviewForm(instance=beat)
+    reviews = Review.objects.filter(beat=beat)
 
     context = {
+        'form': form,
         'beat': beat,
+        'reviews': reviews,
     }
 
     return render(request, 'beats/beat_detail.html', context)
@@ -148,3 +152,27 @@ def delete_beat(request, beat_id):
     beat.delete()
     messages.success(request, 'Beat deleted!')
     return redirect(reverse('beats'))
+
+
+
+def add_review(request, beat_id):
+    """ Add a review of a beat """
+    beat = get_object_or_404(Beat, pk=beat_id)
+    if request.method == 'POST':
+
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.beat = beat
+            form.user = request.user
+            form.save()
+            messages.success(
+                request, 'Successfully posted your review!')
+            return redirect(reverse('beat_detail', args=[beat_id]))
+        else:
+            messages.error(
+                request, 'Failed to add review. Please check review details.')
+
+    return redirect(reverse('beat_detail', args=[beat_id]))
+
+

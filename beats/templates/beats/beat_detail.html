@@ -86,6 +86,64 @@
                 </form>
             </div>
         </div>
+        <hr>
+        <!-------------------------------------------------------------------------------------Beat review input-->
+
+        <div class="row">
+            <div class="review-header">
+                <h4>
+                    Latest Reviews
+                </h4>
+            </div>
+            <div class="review-list">
+                {% if reviews %}
+                    {% for review in reviews %}
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body review-card mt-3 mb-3">
+                                <h5 class="card-title"><i class="fas fa-solid fa-user"></i> <strong>{{ review.user }}</strong></h5>
+                                <p class="card-text">{{ review.comment }}</p>
+                    {% endfor %}
+                            {% if request.user.is_superuser %}
+                                <div>
+                                    <small class="ml-3">
+                                        <a href="#">Edit</a> | 
+                                        <a class="text-danger" href="#" 
+                                        onclick="if (!confirm('Are you sure you want to DELETE this review?')) { return false }">Delete</a>
+                                    </small>
+                                </div>
+                            {% endif %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <p>Be the first to review this beat</p>
+                {% endif %}
+                
+            </div>
+            <hr>
+            <div>
+                <div class="review-add">
+                    <h4>
+                        Add a Review
+                    </h4>
+                </div>
+                {% if request.user.is_authenticated %}
+                    <div class="review-form">
+                        <form method="POST" action="{% url 'add_review' beat.id %}" class="form mb-2" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div class="text-right mb-4 mt-4">
+                                <button class="btn btn-primary add-bag-btt rounded-2" type="submit">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                {% else %}
+                    <div>
+                        <p>To write a review, you need to <a href="{% url 'account_signup' %}">Register</a> 
+                            an acount or <a href="{% url 'account_login' %}">Login</a>.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
     </div>
    
 {% endblock %}

@@ -1,0 +1,31 @@
+<!-------------------------------------------------------------------------------------Beat review input-->
+
+<div class="row">
+    <div class="col">
+        <div class="review-header">
+            <h4>
+                Reviews
+            </h4>
+        </div>
+        <div class="review-latest">
+            {% if latest_review_list %}
+                <div>
+                    {% for review in latest_review_list %}
+                    <div>
+                        <h4>
+                            <a href="{% url 'reviews:review_detail' review.id %}">
+                            {{ review.beat.name }}
+                            </a>
+                        </h4>
+                        <p>{{ review.name }}</p>
+                        <p>{{ review.date }}</p>
+                        <p>{{ review.comment }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p>Bea the first to review this beat</p>
+            {% endif %}
+        </div>
+    </div>
+</div>

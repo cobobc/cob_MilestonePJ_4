@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Genre(models.Model):
     """
@@ -26,6 +26,21 @@ class Beat(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     file = models.FileField(upload_to='media/', null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Review(models.Model):
+    """
+    Input fields for adding reviewing a beat
+    """
+    name = models.CharField(max_length=100, default='')
+    beat = models.ForeignKey(
+        'Beat', null=True, blank=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(
+        User, null=True, blank=True, on_delete=models.SET_NULL)
+    comment = models.TextField(max_length=2000)
 
     def __str__(self):
         return self.name

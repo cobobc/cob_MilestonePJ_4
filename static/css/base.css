@@ -260,6 +260,20 @@ body {
     background-color: #292025;
 }
 
+.review-list {
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.review-card {
+    box-shadow: #6ca3af 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) 6px 2px 16px 0px;
+    border-radius: 1.25rem;
+    margin-left: .938rem;
+    margin-right: .938rem;
+    text-align: left;
+}
+
 /* ---------------------------------------------------------------------------------------------- bootstrap toasts */
 
 .message-container {

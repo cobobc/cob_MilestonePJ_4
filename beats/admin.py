@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Beat, Genre
+from .models import Beat, Genre, Review
 
 # Register your models here.
 
@@ -23,5 +23,14 @@ class GenreAdmin(admin.ModelAdmin):
     )
 
 
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'comment',
+        'beat',
+    )
+
+
+admin.site.register(Review, ReviewAdmin)
 admin.site.register(Beat, BeatAdmin)
 admin.site.register(Genre, GenreAdmin)
