@@ -178,11 +178,11 @@ def add_review(request, beat_id):
 
 
 @login_required
-def edit_review(request, beat_id):
+def edit_review(request, beat_id, review_id):
     """ Edit a review """
     beat = get_object_or_404(Beat, pk=beat_id)
     review = get_object_or_404(Review, pk=review_id)
-    if not request.user == review.author:
+    if not request.user == review.user:
         messages.error(request, 'Sorry you are not permitted to do this')
         return redirect(reverse('beat_detail', args=[beat_id]))
 
@@ -214,11 +214,11 @@ def edit_review(request, beat_id):
 
 
 @login_required
-def delete_review(request, beat_id):
+def delete_review(request, beat_id, review_id):
     """ Delete a review """
 
     review = Review.objects.get(id=review_id)
-    if review.author == request.user:
+    if review.user == request.user:
         review.delete()
         messages.success(request, 'Review deleted!')
         return redirect(reverse('beat_detail', args=[beat_id]))

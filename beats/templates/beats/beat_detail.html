@@ -105,21 +105,13 @@
                     
                                 {% if request.user == review.user %}
                                     <a href="{% url 'edit_review' beat.id review.id %}">Edit</a> | 
-                                        
-                                    <form action="{% url 'delete_review' beat.id review.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <button class="button bg-warning" 
-                                                onclick="if (!confirm('Are you sure you want to DELETE this review?')) { return false }" type="submit">Delete</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <a class="text-danger" href="{% url 'delete_review' beat.id review.id %}" 
+                                    onclick="if (!confirm('Are you sure you want to DELETE this beat?')) { return false }">Delete</a>
                                 {% endif %}
                             </div>
                         </div>
                     {% endfor %}
-                    
+
                 {% else %}
                     <p>Be the first to review this beat</p>
                 {% endif %}
@@ -139,7 +131,7 @@
                             {% csrf_token %}
                             {{ form | crispy }}
                             <div class="text-right mb-4 mt-4">
-                                <button class="btn btn-primary add-bag-btt rounded-2" type="submit">Send</button>
+                                <button class="btn btn-primary add-bag-btt rounded-2" type="submit">Post Review</button>
                             </div>
                         </form>
                     </div>
@@ -152,9 +144,18 @@
             </div>
         </div>
     </div>
-   
+    <div class="btt-button">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+        </a>	
+    </div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
+    <script type="text/javascript">
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
+    </script>
 {% endblock %}
