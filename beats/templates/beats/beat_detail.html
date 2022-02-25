@@ -90,37 +90,44 @@
         <!-------------------------------------------------------------------------------------Beat review input-->
 
         <div class="row">
-            <div class="review-header">
-                <h4>
-                    Latest Reviews
-                </h4>
-            </div>
-            <div class="review-list">
+            <div class="col col-12 col-md-6 col-lg-4">
+                <div class="review-header">
+                    <h4>
+                        Latest Reviews
+                    </h4>
+                </div>
                 {% if reviews %}
                     {% for review in reviews %}
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <div class="card-body review-card mt-3 mb-3">
                                 <h5 class="card-title"><i class="fas fa-solid fa-user"></i> <strong>{{ review.user }}</strong></h5>
                                 <p class="card-text">{{ review.comment }}</p>
-                    {% endfor %}
-                            {% if request.user.is_superuser %}
-                                <div>
-                                    <small class="ml-3">
-                                        <a href="{% url 'edit_review' beat.id %}">Edit</a> | 
-                                        <a class="text-danger" href="#" 
-                                        onclick="if (!confirm('Are you sure you want to DELETE this review?')) { return false }">Delete</a>
-                                    </small>
-                                </div>
-                            {% endif %}
+                    
+                                {% if request.user == review.user %}
+                                    <a href="{% url 'edit_review' beat.id review.id %}">Edit</a> | 
+                                        
+                                    <form action="{% url 'delete_review' beat.id review.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button class="button bg-warning" 
+                                                onclick="if (!confirm('Are you sure you want to DELETE this review?')) { return false }" type="submit">Delete</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                {% endif %}
                             </div>
                         </div>
-                    {% else %}
-                        <p>Be the first to review this beat</p>
+                    {% endfor %}
+                    
+                {% else %}
+                    <p>Be the first to review this beat</p>
                 {% endif %}
-                
             </div>
+        </div>
             <hr>
-            <div>
+        <div class="row">
+            <div class="col">
                 <div class="review-add">
                     <h4>
                         Add a Review

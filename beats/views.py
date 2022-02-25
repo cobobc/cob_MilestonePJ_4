@@ -154,33 +154,40 @@ def delete_beat(request, beat_id):
     return redirect(reverse('beats'))
 
 
-
+@login_required
 def add_review(request, beat_id):
     """ Add a review of a beat """
     beat = get_object_or_404(Beat, pk=beat_id)
-    if request.method == 'POST':
+    if request.user.is_authenticated:
+        if request.method == 'POST':
 
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            form = form.save(commit=False)
-            form.beat = beat
-            form.user = request.user
-            form.save()
-            messages.success(
-                request, 'Successfully posted your review!')
-            return redirect(reverse('beat_detail', args=[beat_id]))
-        else:
-            messages.error(
-                request, 'Failed to add review. Please check review details.')
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                form = form.save(commit=False)
+                form.beat = beat
+                form.user = request.user
+                form.save()
+                messages.success(
+                    request, 'Successfully posted your review!')
+                return redirect(reverse('beat_detail', args=[beat_id]))
+            else:
+                messages.error(
+                    request, 'Failed to add review. Please check review details.')
 
     return redirect(reverse('beat_detail', args=[beat_id]))
 
 
+@login_required
 def edit_review(request, beat_id):
     """ Edit a review """
     beat = get_object_or_404(Beat, pk=beat_id)
+    review = get_object_or_404(Review, pk=review_id)
+    if not request.user == review.author:
+        messages.error(request, 'Sorry you are not permitted to do this')
+        return redirect(reverse('beat_detail', args=[beat_id]))
+
     if request.method == 'POST':
-        form = ReviewForm(request.POST)
+        form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form = form.save(commit=False)
             form.beat = beat
@@ -194,13 +201,29 @@ def edit_review(request, beat_id):
                 request, 'Failed to update review. \
                     Please check review details.')
 
-    return redirect(reverse('beat_detail', args=[beat_id]))
+    else:
+        form = ReviewForm(instance=review)
+
+    context = {
+        'form': form,
+        'beat': beat,
+        'review': review,
+    }
+
+    return render(request, 'beats/edit_review.html', context)
 
 
+@login_required
 def delete_review(request, beat_id):
     """ Delete a review """
 
-    review = get_object_or_404(Review, pk=beat_id)
-    review.delete()
-    messages.success(request, 'Review deleted!')
+    review = Review.objects.get(id=review_id)
+    if review.author == request.user:
+        review.delete()
+        messages.success(request, 'Review deleted!')
+        return redirect(reverse('beat_detail', args=[beat_id]))
+
+    else:
+        messages.error(request, "You are not permitted to do that.")
+
     return redirect(reverse('beat_detail', args=[beat_id]))

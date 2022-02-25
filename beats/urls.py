@@ -7,6 +7,9 @@ urlpatterns = [
     path('add/', views.add_beat, name='add_beat'),
     path('edit/<int:beat_id>/', views.edit_beat, name='edit_beat'),
     path('delete/<int:beat_id>/', views.delete_beat, name='delete_beat'),
-    path('add/<int:beat_id>/', views.add_review, name='add_review'),
-    path('edit/<int:beat_id>/', views.edit_review, name='edit_review'),
+    path('add_review/<int:beat_id>/', views.add_review, name='add_review'),
+    path('edit_review/<int:beat_id>/<review_id>/',
+         views.edit_review, name='edit_review'),
+    path('delete_review/<int:beat_id>/<review_id>/',
+         views.edit_review, name='delete_review'),
 ]
