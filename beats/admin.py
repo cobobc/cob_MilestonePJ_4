@@ -25,9 +25,9 @@ class GenreAdmin(admin.ModelAdmin):
 
 class ReviewAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
-        'comment',
         'beat',
+        'comment',
+        'user',
     )
 
 
