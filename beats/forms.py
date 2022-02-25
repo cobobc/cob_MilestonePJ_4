@@ -28,5 +28,5 @@ class ReviewForm(forms.ModelForm):
     """ Form for Review model that uses all fields except complete """
     class Meta:
         model = Review
-        fields = ['name', 'comment']
+        fields = ['comment']
 

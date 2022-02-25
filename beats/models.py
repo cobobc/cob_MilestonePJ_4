@@ -35,7 +35,6 @@ class Review(models.Model):
     """
     Input fields for adding reviewing a beat
     """
-    name = models.CharField(max_length=100, default='')
     beat = models.ForeignKey(
         'Beat', null=True, blank=True, on_delete=models.SET_NULL)
     user = models.ForeignKey(

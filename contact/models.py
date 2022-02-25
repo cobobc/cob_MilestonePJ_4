@@ -10,7 +10,7 @@ class Contact(models.Model):
     subject = models.CharField(max_length=100, null=False, blank=False)
     name = models.CharField(max_length=60, null=False, blank=False)
     email = models.CharField(max_length=60, null=False, blank=False)
-    comments = models.CharField(max_length=2000, null=False, blank=False)
+    comments = models.TextField(max_length=2000, null=False, blank=False)
     complete = models.BooleanField(default=False)
 
     def __str__(self):
