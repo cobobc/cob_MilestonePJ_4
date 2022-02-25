@@ -41,6 +41,7 @@ Fionn O'Brien (FOB) requested an app store to sell his beats. FOB requires a res
 *   As a Returning user, I want to navigate back to the beat store after adding a beat to my bag.
 *   As a Returning user, I want to be able to generate a new password if I forgot my original one.
 *   As a Returning user, I want to contact FOB via a contact form.
+*   As a Returning user, I want to write a review, edit review and delete reviews.
 
 #### Frequent User Goals
 
@@ -53,6 +54,7 @@ The admin user wants the following:
 
 *   As an admin user, I want to manage (add, edit and delete) the beats on site.
 *   As an admin user, view entire order history from all users.
+*   As an admin user, I want to manage (add, edit and delete) reviews on the app.
 *   As an admin user, I want to view and manage user accounts that signed up to the site.
 *   As an admin user, I want to view all purchases via Stripe.
 
@@ -258,14 +260,14 @@ The features throughout the site are mininal text, larger text and clear buttons
 
 ##### HTML Files
 
-1.  main-nav.html
+1.  main-nav
 
     *   **ERROR:** Error: Element **a** not allowed as child of element **ul** in this context. (Suppressing further errors from this subtree.) Line: 56, 57, 87 
 
-        *   **Fix:** Put each <a> inside an <li>
+        *   **Fix:** Put each **a** inside an **li**
 
    
-1.  beats, beat-detail & bag.html
+1.  beats, beat-detail & bag
 
     *   **ERROR:** Attribute controlslist not allowed on element audio at this point.
 
@@ -277,20 +279,20 @@ The features throughout the site are mininal text, larger text and clear buttons
 
         *   For the purposes of this project, no controllist attribute would allow the user to download the beats without paying money. A criteria for this project is to have no html validation errors, so there were two options. Leaving the controlist in was chosen as it is (1) functioning correctly and (2) it would defeat the purpose of an e-commerce site to allow the user to take the beat for free. But the error is acknowledged.
 
-1.  add_beat.html
+1.  add_beat
 
     *   **ERROR:** Duplicate attribute id. At line 366, column 115
 
         *   **Fix:** Custom widget.py (CustomClearableFileInput) was creating an image id hence duplicating the ids. The widget functionality was deleted an entirely and the form was returned to its base function and styling. THe error was fixed.
 
-1.  bag.html 
+1.  bag 
 
     *   **ERROR:** Table columns in range 4…5 established by element td have no cells beginning in them.
 
         *   **Fix:** Removed colspan from attributes
 
 
-1.  bag.html 
+1.  bag
 
     *   **ERROR:** Duplicate ID remove_3.
 
@@ -395,16 +397,22 @@ JSON validations produced 0 errors.
 
 *   As a Returning user, I want to contact FOB via a contact form - Successful testing ensured that when a user submits a contact form the information is sent to the admin database.
 
+*   As a Returning user, I want to write a review, edit review and delete reviews - A user can successfully write multple reviews on any beat or beats. They can edit or delete there reviews.
+
 
 ##### Frequent Users
 
-*   As a Frequent user, I want to look through the store for new beats or genres - the testing above indicated that user can easily navigate through the site which allow frequent users to easily check for new beats and genres
+*   As a Frequent user, I want to look through the store for new beats or genres - the testing above indicated that user can easily navigate through the site which allow frequent users to easily check for new beats and genres.
+
+*   As a Frequent user, I want to add more reviews and read other reviews about beats - testing was performed to ensure users can write as many reviews as they want and that user can easily read other user reviews.
 
 
 ##### Admin User Goals
 
 
 *   As an admin user, I want to manage (add, edit and delete) the beats on site - Testing was perfomred on the beat management pages to ensure the admin user can easily edit, add and delete beats.
+
+*   As an admin user, I want to manage (add, edit and delete) reviews on the app - Testing was performed on the admin/ page to ensure the admin user can easily edit, add and delete beat reviews.
 
 *   As an admin user, view entire order history from all users - using the admin/ django function the admin user can view all orders from all users.
 
