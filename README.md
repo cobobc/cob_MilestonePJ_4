@@ -444,11 +444,11 @@ JSON validations produced 0 errors.
 
 See the following lighthouse test results:
 
-![Lighthouse mobile results](static/assets/img/testing/Lighthouse_test_mobile.png) \
+![Lighthouse mobile results](static/img/testing/lh_mobile.jpg) \
 **Mobile test result**
 
 
-![Lighthouse desktop results](static/assets/img/testing/Lighthouse_test_desktop.png) \
+![Lighthouse desktop results](static/img/testing/lh_desktop.jpg) \
 **Desktop test result**
 
 

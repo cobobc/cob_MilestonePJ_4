@@ -74,7 +74,7 @@
                                 </div>
                             {% if beat.genre %}
                                     <a href="{% url 'beats' %}?genre={{ beat.genre.name }}" class="btn btn-primary btn-sm beat-genre-btt">
-                                        {{ beat.genre.friendly_name }}
+                                        <i class="fas fa-solid fa-headphones"></i> {{ beat.genre.friendly_name }}
                                     </a>
                             {% endif %}
                             <div class="mb-3">
