@@ -8,7 +8,7 @@ body {
     font-family: 'Cairo', sans-serif;
 }
 
-/*------------------------------------------------------------------------------------------------ navber --*/
+/*------------------------------------------------------------------------------------------------ navbar --*/
 
 .nav-logo {
     width: 70%;
@@ -272,6 +272,21 @@ body {
     margin-left: .938rem;
     margin-right: .938rem;
     text-align: left;
+}
+
+.review-add {
+    display: flex;
+    justify-content: center;
+}
+
+.review-header {
+    text-align: center;
+}
+
+.beat-review-hr {
+    width: 60%;
+    margin: auto;
+    height: .188rem;
 }
 
 /* ---------------------------------------------------------------------------------------------- bootstrap toasts */
