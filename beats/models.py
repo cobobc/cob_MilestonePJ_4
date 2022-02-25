@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Genre(models.Model):
     """
     Input fields for beat genre

@@ -172,7 +172,7 @@ def add_review(request, beat_id):
                 return redirect(reverse('beat_detail', args=[beat_id]))
             else:
                 messages.error(
-                    request, 'Failed to add review. Please check review details.')
+                    request, 'Failed to add review.')
 
     return redirect(reverse('beat_detail', args=[beat_id]))
 
