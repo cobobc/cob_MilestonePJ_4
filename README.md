@@ -296,8 +296,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
     *   **ERROR:** Duplicate ID remove_3.
 
-        *   **Fix/Note:** This page is structured so that large table displays for desktop and the structure changes to a grid design for tablet and mobile. It is for this reason there is duplicate IDs. The content within the structure is duplicated in order to pass the same info the user on all device types. An effort was made to hide remove buttons using bootsrap (d-none) to avoid the code being rendered to the DOM when on large screen. This effort was ineffective.
- 
+        *   **Fix/Note:** Redesigned bag page to remove error
 
 ##### Python (app.py) 
 

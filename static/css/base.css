@@ -158,8 +158,13 @@ body {
 
 .footer-container p {
     color: #292025;
-    font-size: 1rem;
+    font-size: .71rem;
     margin-bottom: 0;
+}
+
+.footer-contact a {
+    border-color: #292025;
+    border-radius: 15px;
 }
 
 /*------------------------------------------------------------------------------------------------ beats --*/
@@ -435,10 +440,25 @@ body {
 /*--------------------------------------------------------------beat bag-*/
 
 .bag-img img {
-    width: 15rem;
-    height: 12.5rem;
+    width: 29rem;
+    height: 14.5rem;
     object-fit: cover;
-    border-radius: .625rem;
+    border-radius: 0.625rem;
+}
+
+.bag-audio {
+    display: flex;
+    justify-content: left;
+    width: 90%;
+}
+
+.bag-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.remove-btn {
+    border-radius: 1.25rem;
 }
 
 /*---------------------------------------------------------------*/
