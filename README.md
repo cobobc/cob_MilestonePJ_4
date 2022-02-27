@@ -6,7 +6,7 @@ The purpose of this site is to complete the fourth Milestone Project for the Cod
 
 ## FOB Beats App
 
-![FOB Beats](static/assets/img/cookbook_app.png)
+![FOB Beats](static/img/responsive.jpg)
 
 Fionn O'Brien (FOB) requested an app store to sell his beats. FOB requires a responsive website that allows users to listen to his beats and buy them for their own musical purposes. Once the user buys a beat(s) they will receive it as a download link in the sale confirmation email. The app allows users to create a profile where they can view their order history. An administation superuser will allow FOB to manage the site on his own with the capacity to add, delete and edit beats to the store.
 
@@ -74,7 +74,7 @@ Images and audio files were provided by and owned by my brother Fionn O'Brien (F
 
 #### Wireframes
 
-For complete wireframes see this [PDF](static/img/wireframes_msp4).
+For complete wireframes see this [PDF](static/img/wireframes_msp4.pdf).
 
 
 ### Limitations

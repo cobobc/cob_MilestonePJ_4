@@ -457,6 +457,10 @@ body {
     justify-content: center;
 }
 
+.total h5 {
+    text-align: center;
+}
+
 .remove-btn {
     border-radius: 1.25rem;
 }
