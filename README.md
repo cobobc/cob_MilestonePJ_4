@@ -131,9 +131,6 @@ The features throughout the site are mininal text, larger text and clear buttons
 
     *   This page provides the user with all the beats they have added to the bag, the price, and an option to remove the item from the bag.
     *   The page also provides the total cost and options to proceed to checkout or go back for more beats.
-    *   For desktop, the beats info appear in a table with the info spread across the row and the check out (and total) appears at the bottom of the page.
-    *   For tablet, the total and checkout options appear at the top of the page. The beat imag, price and remove option appear on the left column and the right column on the same row displays the beat name and audio.
-    *   For mobile, the tablet view is condensed into one single column.
     *   A jump back to the top of the page button is provided in the bottom right of the page for good UX.
 
 *   Checkout page
@@ -171,7 +168,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
     *   This page provides a welcome message and instruction on how to use the profile page.
     *   The users order history is contained within a collapsable bootstrap accordian feature. When the user user slect the accordian their order history displays in table form - order number, date, items, and order total.
-    *   Below the oreder history is the users main deails in a form - name and email. The user can update this information as they want and selcting the **update information** button will update and save the new information.
+    *   Below the order history is the users main deails in a form - name and email. The user can update this information as they want and selcting the **update information** button will update and save the new information.
 
 *   Beat Management Pages
 
@@ -225,6 +222,8 @@ The features throughout the site are mininal text, larger text and clear buttons
 *   [GitHub](https://github.com/) - hosting site to store the websites source code and Git pages used to deploy the live site.
 
 *   [Gitpod](https://gitpod.io/workspaces) - the version control to check status, add, commit and push code to GitHubs repository for storage.
+
+*   [Random key gen](https://randomkeygen.com/) 
 
 *   [Microsoft PowerPoint](https://office.live.com/start/powerpoint.aspx) - used to create the wireframes.
 
@@ -553,6 +552,10 @@ The following commands were used throughout the project:
 1.  Use the 'git clone' command in terminal followed by the copied git URL.
 1.  A clone of the project will be created locally on your machine.
 
+
+## Secret Key Note
+
+The secret key was changed. The production secret key is not the one that was ever pushed in settings.py file.
 
 ## Credits
 
