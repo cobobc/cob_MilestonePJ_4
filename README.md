@@ -588,7 +588,7 @@ I'd like to thank mentor Daisy McGirr who kindly stepped in to take my final pro
 
 Thank you to Chris Z. (@ckz8780) a Tutor at Code Institute whose teaching techniques helped me understand how to build a full stack site using Django. A lot of this project's code structing and testing was sourced from his amazing Intro to Django and Boutique Ado videos/tutorials.
 
-Thanks to various Slack users for helping with issues I had throughout the amazing journey.
+Thanks to various Slack users for helping with issues I had throughout the journey.
 
 Thanks to Code Institute tutors for stepping in when I was really stuck on a bug.
 
