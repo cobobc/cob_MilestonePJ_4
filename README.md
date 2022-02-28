@@ -79,7 +79,7 @@ For complete wireframes see this [PDF](static/img/wireframes_msp4.pdf).
 
 ### Limitations
 
-There were no limitations.
+Time contranist to impenting a favico for images. Time constraints to research a more affective way of have the quantity code as commented out placeholder code. FOB will sell merchandise in the near future so this code will be ustilised.
 
 ## Features 
 
@@ -99,6 +99,8 @@ The features throughout the site are mininal text, larger text and clear buttons
 *   Footer
 
     *   Featured identically on every page and contains Font Awesome icons used to provide external links to FOBs social platforms. Each external link has the attribute of target="_blank" which opens the link in a new tab, keeping the user on the site and allowing for seemless UX.
+
+    *   Contains a link to the FOB contact form. The contact page allows a user to contact FOB directly via the site. Any message sent will be received by FOB in the admin.
 
 *   Home page
 
@@ -136,7 +138,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 *   Checkout page
 
     *   This page provides order summary (beat image, name, price, subtotal and total costs), user details name and email for where the order will be sent, the payment by debit or credit card option (processed by strip in the backend), and the option to complete the purchase.
-    *   For desktop, the apge has 2 main columns. The left, contains the user details input options, a radio button option to save the user detals (if the user is not registered or not looged in - the option appears as Create an account or sign in to save details), the card payment input option, and the complete purchase option. The right, contains the order summary and total cost.
+    *   For desktop, the page has 2 main columns. The left, contains the user details input options, a radio button option to save the user detals (if the user is not registered or not looged in - the option appears as Create an account or sign in to save details), the card payment input option, and the complete purchase option. The right, contains the order summary and total cost.
     *   For tablet and mobile, all features are consensed into 1 column with the order history push to the on top of the user details, etc.
 
 *   Checkout success page
@@ -158,17 +160,12 @@ The features throughout the site are mininal text, larger text and clear buttons
     *   The user clicks the **sign in** button and they are directed back to the home page where they start to explore.
     *   There is medium size text under the page header asking the user if they are new to the site and provides a link to the register page in case the user has mistakenly navigated to the log in page.
     
-*   Profile Page
-
-    *   A header with short descriptive text informing the user about the options available on the page.
-    *   For desktop and tablet, there are two cards on the same row with an image and a button each so the user can either go the recipes page or add recipes page. On mobile the cards will sit on top of each other in the same column.
-
 
 *   My Profile Page
 
     *   This page provides a welcome message and instruction on how to use the profile page.
     *   The users order history is contained within a collapsable bootstrap accordian feature. When the user user slect the accordian their order history displays in table form - order number, date, items, and order total.
-    *   Below the order history is the users main deails in a form - name and email. The user can update this information as they want and selcting the **update information** button will update and save the new information.
+    *   Below the order history is the users main details in a form - name and email. The user can update this information as they want and selcting the **update information** button will update and save the new information.
 
 *   Beat Management Pages
 
@@ -282,7 +279,7 @@ The features throughout the site are mininal text, larger text and clear buttons
 
     *   **ERROR:** Duplicate attribute id. At line 366, column 115
 
-        *   **Fix:** Custom widget.py (CustomClearableFileInput) was creating an image id hence duplicating the ids. The widget functionality was deleted an entirely and the form was returned to its base function and styling. THe error was fixed.
+        *   **Fix:** Custom widget.py (CustomClearableFileInput) was creating an image id hence duplicating the ids. The widget functionality was deleted an entirely and the form was returned to its base function and styling. The error was fixed.
 
 1.  bag 
 
@@ -303,18 +300,18 @@ The features throughout the site are mininal text, larger text and clear buttons
 
     *   **ERROR:** lines 63 & 64 - missing whitespace around operator e.g., `profile.default_full_name=billing_details.name,`
 
-    *   **Fix:** Added a space before and after the = sign on these lines
+        *   **Fix:** Added a space before and after the = sign on these lines
 
     *   **ERROR:** lines 87 & 118 - lines are too long
 
-    *   **Fix:** Added a \ to break the lines into 2 smaller lines
+        *   **Fix:** Added a \ to break the lines into 2 smaller lines
 
 1.  settings.py
 
     *   **ERROR:** lines 142, 145, 148, 151 are too long
 
     *   **Fix:** `'NAME': 'django.contrib.auth.password_validation.'
-                    'UserAttributeSimilarityValidator',`
+                    'UserAttributeSimilarityValidator',`(User...was put on a secong line)
 
 Python errors fixed and is producing 0 errors.
 
@@ -362,7 +359,7 @@ JSON validations produced 0 errors.
 
 *   As a First Time user, I want to listen to different beats - Testing was performed on the audio files to ensure the user can listen to a beat befor they purchase it.
 
-*   As a First Time user, I want to add beat to my bag - Testing was performed on the the Add to bag button to ensure the user can successfully add a beat to their bag and view the contents of their. 
+*   As a First Time user, I want to add beat to my bag - Testing was performed on the the Add to bag button to ensure the user can successfully add a beat to their bag and view the contents. 
 
 *   As a First Time user, I want to easily adjust my bag by removing beats if I require - Testing was performed and the user can easily remove a beat from their bag in the Beat Bag page.
 
@@ -381,15 +378,13 @@ JSON validations produced 0 errors.
 
 ##### Returning Users
 
-*   As a Returning user, I want to view my order history - Testing was performed and the app stores orders made made by the user. Tsting on the accordian dropdown was also performed to ensure the user can see the history on the My Profile page.
+*   As a Returning user, I want to view my order history - Testing was performed and the app stores orders made made by the user. Testing on the accordian dropdown was also performed to ensure the user can see the history on the My Profile page.
 
 *   As a Returning user, I want to update my user information - Testing was performed and the user can succesfully update their user information and new information is saved on My Profile page.
 
 *   As a Returning user, I want to sort through the beat by genre A-Z or price (high-low) - Testing was performed and the user can sort through the beats as they wish. The sorting functionality works whether the user wants sorted alphabetically or by price.
 
 *   As a Returning user, I want to search for specific type of beat using the search tool - Testing was performed and the user can input descriptive words into the search bar and the app will provide options. If the user inputs a word incorrectly spelt or a word that is not referenced in the store, they will find no results.
-
-*   As a Returning user, I want to navigate back to the beat store after adding a beat to my bag - 
 
 *   As a Returning user, I want to be able to generate a new password if I forgot my original one - Testing was performed and the user can create a new password if they can't login as they have forgotten there password. A change password link is sent to the email provided. Once they follow the steps they can successfully login using the new password.
 
@@ -575,6 +570,7 @@ The secret key was changed. The production secret key is not the one that was ev
 
 *   Chris Z. (@ckz8780) a Tutor at Code Institute code - all his django videos and tutorials make up the a lot of the structure and logic of this app. His [boutique_ado_v1](https://github.com/Code-Institute-Solutions/boutique_ado_v1.git) provided a lot of the structure and inspiration for this project.
 
+*   My code from my [milestone 1 project](https://github.com/cobobc/milestone_project_fob.git) - used some of the code for designing the homepage and footer.
 
 ### Content 
 
